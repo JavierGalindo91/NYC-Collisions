@@ -16,9 +16,6 @@ def upload_my_file(bucket, folder, file_to_upload, file_name):
         return False
     return True
 
-os.chdir(r'C:\Users\javie\OneDrive\Documents\NYC_Data_Engineer_Project\collisions_data - Copy')
-path = os.getcwd()
-
 def upload_to_S3_bucket(bucket_name, key_name, path):
     for top, dirs, files in os.walk(path):
         for file in files:
@@ -31,6 +28,3 @@ def upload_to_S3_bucket(bucket_name, key_name, path):
             upload_my_file(bucket_name, upload_file_key, individual_file_path, file) # Storing the csv file corresponding to the date in folder
 
     return 'Successful S3 upload!'
-
-collisions = upload_to_S3_bucket('nyc-application-collisions', 'collisions/', path)
-print (collisions)
