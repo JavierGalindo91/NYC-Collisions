@@ -2,17 +2,17 @@
 ## OVERVIEW
 For this project we will do a mock scenario where we will pretend to be part of a data or business intelligence team at an insurance company.
 
-### A Brief History of the NYC Driver Behavior
+### SCENARIO: A Brief History of the NYC Driver Behavior
 
-The Underwriting team at The Car Insurance Company **TCIC** is embarking on a mission to revamp their premium pricing methodology. The advent of the COVID-19 pandemic has significantly altered the landscape of urban mobility, particularly in densely populated areas like New York City. Our primary goal is to delve deep into the data to glean critical insights into how these changes have affected the driving behaviors of our NYC clientele.
+In this project, we are undertaking an analytical initiative focused on the impact of the COVID-19 pandemic on driving behaviors in New York City. This analysis is conducted by The Car Insurance Company TCIC's data and business intelligence team, with the goal of refining the existing premium pricing methodology in response to the significant changes in urban mobility patterns.
 
-By analyzing various data facets, we aim to understand the pandemic's impact on driving patterns, risk areas, and accident trends. This project is not just a data-driven endeavor but a quest to align our services with the evolving needs of our customers in these unprecedented times.
+The project involves a deep dive into various datasets to understand how the pandemic has affected driving habits, risk factors, and accident trends among the NYC customer base. Our objective is to utilize these insights to inform decision-making processes within underwriting and customer service, ensuring that our products and services are effectively tailored to meet the current needs of our customers
 
 ### Expected Outcomes
-- **Informed Decisions**: Empower the underwriting and customer service teams with data-driven decision-making capabilities.
-- **Adaptability**: Tailor our products and services to align with the dynamic needs of our customers during and post-pandemic.
-- **Stakeholder Satisfaction**: Surpass stakeholder expectations by delivering comprehensive and actionable insights.
-- **Competitive Advantage**: Enhance our market position through the strategic use of advanced analytics.
+- **Data-Driven Decision Making**: Enhancing our underwriting and customer service strategies based on thorough data analysis.
+- **Adaptability**: Adjusting our offerings to align with the shifting driving patterns and needs of our customers during and post-pandemic.
+- **Stakeholder Satisfaction**: Delivering comprehensive insights to meet and exceed stakeholder expectations.
+- **Competitive Advantage**: Using advanced analytics to maintain and strengthen our position in the insurance market.
 
 ## METHODOLOGY
 ### Exploratory Data Analysis
