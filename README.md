@@ -30,7 +30,7 @@ The project involves a deep dive into various datasets to understand how the pan
 ## DATA SOURCES and TOOLS
 ### Data Sources
 **NYPD Open Data API**, Powered by Socrata
-- Crashes Dataset: [Crashes table](https://dev.socrata.com/foundry/data.cityofnewyork.us/h9gi-nx95)
+- Crashes Dataset: [Crashes Data](https://dev.socrata.com/foundry/data.cityofnewyork.us/h9gi-nx95)
 - Person Dataset: [Person Data](https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Person/f55k-p6yu)
 - Vehicle Dataset: [Vehicle Data](https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Vehicles/bm4k-52h4)
 
