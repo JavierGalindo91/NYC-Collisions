@@ -75,6 +75,31 @@ For presenting our findings and data narratives, Microsoft PowerPoint serves as 
 
 The integration of these tools forms a robust and dynamic data pipeline, essential for navigating the complexities of urban driving behavior analysis in the post-pandemic era. It is this pipeline that empowers us to deliver on our promise of data-driven decision-making, adaptability, stakeholder satisfaction, and competitive advantage.
 
+## Accessing Files and Resources
+This repository contains all the necessary files and resources used in the NYC Driver Behavior Analysis Project. Here's how to navigate and utilize them:
+
+#### Directory Structure
+- **AWS**: Contains scripts and configuration files related to AWS services such as Lambda, S3, and Redshift.
+- **Docker**: Includes Dockerfile and related scripts for setting up the Docker containers used in the project.
+- **app**: Source code for the main application.
+- **data pipelines**: Scripts and code for setting up and managing the data pipelines.
+- **data**: This directory is typically used for storing data files. However, due to the sensitive nature of the data, it may not contain raw data files.
+- **resources**: Additional resources for the project, such as documentation, configuration files, or reference material.
+
+## HOW TO USE
+To work with the files in this repository, follow these steps:
+1. **Clone the Repository**: Clone this repository to your local machine using Git command: `git clone https://github.com/JavierGalindo91/NYC-Collisions.git`
+2. **Navigate to Directories**: Use the command line to navigate into any of the directories listed above. For example: `cd NYC-Collisions/AWS`
+3. **File Access**: Access files directly within the cloned directories. If you're using an IDE or text editor, you can open the entire project folder to browse through the files.
+4. **Running Scripts**: To run scripts, ensure you have the necessary runtime environments set up, such as Python for .py files or Docker for containers. For Python scripts, the command might look like: `python3 script_name.py`
+5. **Data Privacy**: Please note that the actual data may be protected due to privacy concerns and thus not available in the repository. If you require access to the data, contact the repository owner at the provided email address.
+6. **Updating Files**: If you've made changes and wish to push them to the repository, use the standard Git commands `git add`, `git commit`, and `git push` to update the repository.
+7. **Docker Containers**: To work with Docker containers, make sure Docker is installed on your system and use the Docker CLI to build and run containers.
+8. **AWS and Cloud Resources**: For AWS resources, you will need appropriate access credentials and permissions. Use the AWS CLI or management console to interact with the services.
+
+### Need Help?
+If you encounter any issues or have questions about accessing specific resources, please open an issue in this repository or contact the repository administrator at javier.galindobrito@gmail.com.
+
 ## HOW TO CONTRIBUTE
 We welcome contributions from data analysts, data scientists, and urban mobility experts. If you're interested in contributing to this project, please follow these steps:
 
