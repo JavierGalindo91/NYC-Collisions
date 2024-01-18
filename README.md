@@ -44,7 +44,7 @@ The project involves a deep dive into various datasets to understand how the pan
 - **Microsoft PowerBI**: Our chosen tool for data visualization.
 - **Microsoft PowerPoint**: The canvas for our data story.
   
-### Data Pipeline
+## Data Pipeline
 The following diagram showcases a sophisticated ecosystem, meticulously designed to transform raw data into actionable insights. This data pipeline is the backbone of our project, enabling us to process vast amounts of data efficiently and reliably. Below is an overview of the key components of our data pipeline and the tools employed in each stage:
 
 ![Data Pipeline](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/09375b87-113e-4fbf-b496-f87b3e9b411f)
