@@ -27,6 +27,23 @@ By analyzing various data facets, we aim to understand the pandemic's impact on 
 - **Cloud and Data Management**: Utilize state-of-the-art cloud and data management technologies to facilitate the analysis and seamless communication of insights.
 - **Visualization and Reporting Tools**: Employ advanced visualization and reporting tools to unearth deeper findings and present them in an easily digestible format.
 
+## TECHNOLOGY AND DATA SOURCES
+### Data Sources: 
+**NYPD Open Data API**, Powered by Socrata
+- Crashes Dataset: [Crashes table](https://dev.socrata.com/foundry/data.cityofnewyork.us/h9gi-nx95)
+- Person Dataset: [Person Data](https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Person/f55k-p6yu)
+- Vehicle Dataset: [Vehicle Data](https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Vehicles/bm4k-52h4)
+
+### Tools Used
+- **Python 3**: libraries (pandas, scipy, numpy, boto3, sys, io, sodapy) for building connectors to Open Data API and interfacing with AWS cloud environment.
+- **Docker**: Crafting an application for the mass upload pipeline.
+- **AWS Lambda**: Automating workflows within the AWS ecosystem.
+- **AWS S3**: Repository for both raw and meticulously processed data.
+- **AWS Glue**: Extracting raw data and transforming it for the processed storage bucket in S3.
+- **AWS Redshift**: Constructing the Data Warehouse for OLAP (Online Analytical Processing).
+- **Microsoft PowerBI**: Our chosen tool for data visualization and unearthing insights.
+- **PowerPoint**: The canvas for our data story presentation.
+  
 ## HOW TO CONTRIBUTE
 We welcome contributions from data analysts, data scientists, and urban mobility experts. If you're interested in contributing to this project, please follow these steps:
 
