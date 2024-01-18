@@ -1,6 +1,6 @@
 # NYC Driver Behavior Analysis Project
 ## OVERVIEW
-For this project we will do a mock scenario where we will pretend to be part of a data or business intelligence team at an insurance company.
+For this project we will do a mock scenario where we will pretend to be part of a data or business intelligence team at a car insurance company.
 
 ### SCENARIO: A Brief History of the NYC Driver Behavior
 
