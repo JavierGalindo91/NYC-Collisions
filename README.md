@@ -42,7 +42,7 @@ The project involves a deep dive into various datasets to understand how the pan
 - **AWS Glue**: Extracting raw data and transforming it for the processed storage bucket in S3.
 - **AWS Redshift**: Constructing the Data Warehouse for OLAP (Online Analytical Processing).
 - **Microsoft PowerBI**: Our chosen tool for data visualization and unearthing insights.
-- **PowerPoint**: The canvas for our data story presentation.
+- **Microsoft PowerPoint**: The canvas for our data story presentation.
   
 ## HOW TO CONTRIBUTE
 We welcome contributions from data analysts, data scientists, and urban mobility experts. If you're interested in contributing to this project, please follow these steps:
