@@ -4,7 +4,7 @@ For this project we will do a mock scenario where we will pretend to be part of 
 
 ### A Brief History of the NYC Driver Behavior
 
-The Underwriting team at The Car Insurance Company TCIC is embarking on a mission to revamp their premium pricing methodology. The advent of the COVID-19 pandemic has significantly altered the landscape of urban mobility, particularly in densely populated areas like New York City. Our primary goal is to delve deep into the data to glean critical insights into how these changes have affected the driving behaviors of our NYC clientele.
+The Underwriting team at The Car Insurance Company **TCIC** is embarking on a mission to revamp their premium pricing methodology. The advent of the COVID-19 pandemic has significantly altered the landscape of urban mobility, particularly in densely populated areas like New York City. Our primary goal is to delve deep into the data to glean critical insights into how these changes have affected the driving behaviors of our NYC clientele.
 
 By analyzing various data facets, we aim to understand the pandemic's impact on driving patterns, risk areas, and accident trends. This project is not just a data-driven endeavor but a quest to align our services with the evolving needs of our customers in these unprecedented times.
 
