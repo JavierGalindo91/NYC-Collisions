@@ -85,6 +85,7 @@ This repository contains all the necessary files and resources used in the NYC D
 - **data pipelines**: Scripts and code for setting up and managing the data pipelines.
 - **data**: This directory is typically used for storing data files. However, due to the sensitive nature of the data, it may not contain raw data files.
 - **resources**: Additional resources for the project, such as documentation, configuration files, or reference material.
+  - You can access the _**Miro Board**_: via this [link](https://miro.com/app/board/uXjVN9Vu39I=/?share_link_id=875736273394).
 
 ## HOW TO USE
 To work with the files in this repository, follow these steps:
