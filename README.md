@@ -27,7 +27,7 @@ The project involves a deep dive into various datasets to understand how the pan
 - **Cloud and Data Management**: Utilize state-of-the-art cloud and data management technologies to facilitate the analysis and seamless communication of insights.
 - **Visualization and Reporting Tools**: Employ advanced visualization and reporting tools to unearth deeper findings and present them in an easily digestible format.
 
-## TECHNOLOGY AND DATA SOURCES
+## DATA SOURCES AND TOOLS
 ### Data Sources
 **NYPD Open Data API**, Powered by Socrata
 - Crashes Dataset: [Crashes table](https://dev.socrata.com/foundry/data.cityofnewyork.us/h9gi-nx95)
