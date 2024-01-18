@@ -48,9 +48,9 @@ By analyzing various data facets, we aim to understand the pandemic's impact on 
 We welcome contributions from data analysts, data scientists, and urban mobility experts. If you're interested in contributing to this project, please follow these steps:
 
 1. Fork this repository.
-1. Create a new branch for your feature (git checkout -b feature/YourFeature).
-1. Commit your changes (git commit -am 'Add some YourFeature').
-1. Push to the branch (git push origin feature/YourFeature).
+1. Create a new branch for your feature (**git checkout -b feature/YourFeature**).
+1. Commit your changes (**git commit -am 'Add some YourFeature'**).
+1. Push to the branch (**git push origin feature/YourFeature**).
 1. Open a new Pull Request.
 1. For any queries or suggestions, feel free to open an issue in the repository.
 
