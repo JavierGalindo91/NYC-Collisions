@@ -75,7 +75,7 @@ For presenting our findings and data narratives, Microsoft PowerPoint serves as 
 
 The integration of these tools forms a robust and dynamic data pipeline, essential for navigating the complexities of urban driving behavior analysis in the post-pandemic era. It is this pipeline that empowers us to deliver on our promise of data-driven decision-making, adaptability, stakeholder satisfaction, and competitive advantage.
 
-## FILES and RESOURCE ACCESS
+## FILE and RESOURCE ACCESS
 This repository contains all the necessary files and resources used in the NYC Driver Behavior Analysis Project. Here's how to navigate and utilize them:
 
 #### Directory Structure
