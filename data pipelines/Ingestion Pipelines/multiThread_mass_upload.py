@@ -7,17 +7,65 @@ from sodapy import Socrata
 from secrets_1 import app_token, access_key, secret_access_key
 
 def fetch_data_chunk(offset, chunk_size, client, dataset_name):
-    # Fetch a chunk of data with the specified offset and chunk size
+    """
+    Fetch a chunk of data from a dataset.
+    
+    Args:
+        offset (int): The offset from where to start fetching data.
+        chunk_size (int): The number of records to fetch in this chunk.
+        client: The client object responsible for interacting with the dataset.
+        dataset_name (str): The name of the dataset to fetch data from.
+
+    Returns:
+        list: A list of records retrieved from the dataset.
+
+    Example:
+        To fetch the first 100 records from a dataset named 'my_dataset', you can call:
+        fetch_data_chunk(0, 100, my_client, 'my_dataset')
+    """
+    
     results = client.get(dataset_name, limit=chunk_size, offset=offset, order='collision_id')
     return results
 
 def get_total_record_count(client, dataset_name):
-    # Retrieve the total record count
+    """
+    Retrieve the total record count of a dataset.
+
+    Args:
+        client: The client object responsible for interacting with the dataset.
+        dataset_name (str): The name of the dataset for which to retrieve the record count.
+
+    Returns:
+        int: The total number of records in the dataset.
+
+    Example:
+        To get the total record count of a dataset named 'my_dataset', you can call:
+        total_count = get_total_record_count(my_client, 'my_dataset')
+    """
+    
     record_count = client.get(dataset_name, select="COUNT(*)")
     total_records = int(record_count[0]['COUNT'])
     return total_records
 
 def get_api_records(client, api_url, app_token, dataset_name):
+    """
+    Fetch and aggregate records from an API in parallel using a ThreadPoolExecutor.
+
+    Args:
+        client: The client object responsible for interacting with the API.
+        api_url (str): The URL of the API endpoint to fetch data from.
+        app_token (str): The application token required for authentication (if any).
+        dataset_name (str): The name or identifier of the dataset.
+
+    Returns:
+        pd.DataFrame: A Pandas DataFrame containing the aggregated records from the API.
+
+    Example:
+        To fetch and aggregate records from an API endpoint 'https://example.com/api/data',
+        with an app token 'my_token', and store them in a DataFrame, you can call:
+        df = get_api_records(my_client, 'https://example.com/api/data', 'my_token', 'my_dataset')
+    """
+    
     chunk_size = 5000
     client.timeout = 100
     
@@ -47,7 +95,6 @@ def get_api_records(client, api_url, app_token, dataset_name):
     print(f"Total number of records: {total_records}")
     print(f'Number of requests sent {number_of_requests_sent}')
     
-    # Convert the results to a pandas DataFrame
     return pd.DataFrame.from_records(results)
 
 def upload_dataframe_to_s3(client, bucket_name, key_name, df, dataset_name):
