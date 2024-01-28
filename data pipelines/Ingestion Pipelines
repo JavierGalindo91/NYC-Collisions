@@ -1,0 +1,1 @@
+This folder contains the ingestion pipelines that collect data from the OpenData API (Powered by Socrata) into a S3 bucket.
