@@ -85,7 +85,7 @@ def main():
     # Call on Brute Force Method for Mass Download
     crash_df = get_api_records(socrata_client, data_url, app_token, crash_data_set)
 
-    # Connect to AWS boto3 client - Make sure to check the security settings / Add this to the blog entry
+    # Connect to AWS boto3 client - Make sure to check the security settings 
     aws_client = boto3.client('s3', aws_access_key_id = access_key, aws_secret_access_key = secret_access_key)
 
     # Upload directly to S3 collisions_raw_data key
