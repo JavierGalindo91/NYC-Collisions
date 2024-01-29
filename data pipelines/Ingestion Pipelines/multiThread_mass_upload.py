@@ -82,7 +82,7 @@ def get_api_records(client, api_url, app_token, dataset_name):
         while start < total_records:
             futures.append(executor.submit(fetch_data_chunk, start, chunk_size, client, dataset_name))
             start += chunk_size
-            number_of_requests_sent = number_of_requests_sent + 1
+            number_of_requests_sent += 1
 
         # Collect the results from all futures
         results = []
