@@ -133,7 +133,7 @@ def main():
     # Measure execution time
     start_time = time.time()
 
-    # Call on Brute Force Method for Mass Download
+    # Call on Threading Method for Mass Download
     crash_df = get_api_records(socrata_client, data_url, app_token, crash_data_set)
 
     # Connect to AWS boto3 client - Make sure to check the security settings / Add this to the blog entry
