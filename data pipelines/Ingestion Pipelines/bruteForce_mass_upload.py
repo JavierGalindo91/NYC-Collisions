@@ -32,10 +32,10 @@ def get_api_records(client, api_url, app_token, dataset_name):
     # Get the data in chunks of 5,000 records 
     while True:
         results.extend(client.get(dataset_name, offset=start, limit=chunk_size, order='collision_id'))
-        start = start + chunk_size
+        start += chunk_size
         if (start > total_records):
             break
-        number_of_requests_sent = number_of_requests_sent + 1
+        number_of_requests_sent += 1
     
     print("BRUTE FORCE APPROACH")
     print(f"Total number of records: {total_records}")
