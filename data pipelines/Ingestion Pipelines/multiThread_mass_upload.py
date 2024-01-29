@@ -99,7 +99,7 @@ def get_api_records(client, api_url, app_token, dataset_name):
 
 def upload_dataframe_to_s3(client, bucket_name, key_name, df, dataset_name):
     """
-    Uploads a DataFrame to an S3 bucket using the provided AWS S3 client.
+    Uploads a DataFrame to S3 bucket using the provided AWS S3 client.
 
     Args:
         client (boto3.client): An AWS S3 client object.
