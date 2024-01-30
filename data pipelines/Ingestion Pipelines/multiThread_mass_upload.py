@@ -18,10 +18,6 @@ def fetch_data_chunk(offset, chunk_size, client, dataset_name):
 
     Returns:
         list: A list of records retrieved from the dataset.
-
-    Example:
-        To fetch the first 100 records from a dataset named 'my_dataset', you can call:
-        fetch_data_chunk(0, 100, my_client, 'my_dataset')
     """
     
     results = client.get(dataset_name, limit=chunk_size, offset=offset, order='collision_id')
@@ -37,10 +33,6 @@ def get_total_record_count(client, dataset_name):
 
     Returns:
         int: The total number of records in the dataset.
-
-    Example:
-        To get the total record count of a dataset named 'my_dataset', you can call:
-        total_count = get_total_record_count(my_client, 'my_dataset')
     """
     
     record_count = client.get(dataset_name, select="COUNT(*)")
@@ -59,11 +51,6 @@ def get_api_records(client, api_url, app_token, dataset_name):
 
     Returns:
         pd.DataFrame: A Pandas DataFrame containing the aggregated records from the API.
-
-    Example:
-        To fetch and aggregate records from an API endpoint 'https://example.com/api/data',
-        with an app token 'my_token', and store them in a DataFrame, you can call:
-        df = get_api_records(my_client, 'https://example.com/api/data', 'my_token', 'my_dataset')
     """
     
     chunk_size = 5000
