@@ -1,4 +1,4 @@
-import time,os
+import time
 import pandas as pd
 import boto3
 from botocore.exceptions import ClientError
