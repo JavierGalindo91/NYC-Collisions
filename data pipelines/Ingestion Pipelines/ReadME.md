@@ -28,6 +28,7 @@ You can find the scripts for these Data Ingestion Pipelines here:
 -	[bruteForce_mass_upload.py](https://github.com/JavierGalindo91/NYC-Collisions/blob/main/data%20pipelines/Ingestion%20Pipelines/bruteForce_mass_upload.py)
 - [multiThread_mass_upload.py](https://github.com/JavierGalindo91/NYC-Collisions/blob/main/data%20pipelines/Ingestion%20Pipelines/multiThread_mass_upload.py)
 
+
 ## MASS UPLOAD DATA INGESTION PIPELINE
 As stated in the previous section, we implement a mass upload when setting up the application. We will then deploy this application via Docker in a different tutorial.
 
@@ -42,7 +43,7 @@ Import necessary Python libraries and modules: including _time_, _pandas_, _boto
 
 _This script imports sensitive credentials (app_token, access_key, and secret_access_key) from an external file named secrets_1.py. It is a good practice to keep sensitive information separate from the code._ 
 
-Please review the documentation below for more information about how to get these credentials:
+_Please review the documentation below for more information about how to get these credentials:_
  -  https://dev.socrata.com/docs/app-tokens.html
  -  https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html
 
@@ -56,7 +57,7 @@ _**Inputs**_: Socrata client (_client_), API endpoint URL (_api_url_), applicati
 3.	Calculate the _total number of records_ in the dataset and by doing a total record count.
 4.	Fire up requests to the Socrata API until the _start_ counter reaches the _total number of records_.
 5.	The data from the API is then retrieved in chunks of 5,000 records until all records are fetched and appended to the _results_ list:
-  i.	The Socrata [documentation](https://dev.socrata.com/docs/paging.html#2.1) suggests that our request is ordered by the _collision_id_ field to guarantee that the order of our results will be stable as we page through the dataset.
+* The Socrata [documentation](https://dev.socrata.com/docs/paging.html#2.1) suggests that our request is ordered by the _collision_id_ field to guarantee that the order of our results will be stable as we page through the dataset.
 6.	Finally, return the fetched data as a pandas DataFrame.
  
 
