@@ -17,6 +17,6 @@ The diagram below highlights two Data Ingestion processes, as indicated by the m
 
 #### DATA SOURCES
 The main data source is the NYPD Open Data API, Powered by Socrata:
-Crashes Dataset: Crashes Data[https://dev.socrata.com/foundry/data.cityofnewyork.us/h9gi-nx95]
-Person Dataset: Person Data[https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Person/f55k-p6yu/about_data]
-Vehicle Dataset: Vehicle Data[https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Vehicles/bm4k-52h4/about_data]
+- Crashes Dataset: Crashes Data[https://dev.socrata.com/foundry/data.cityofnewyork.us/h9gi-nx95]
+- Person Dataset: Person Data[https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Person/f55k-p6yu/about_data]
+- Vehicle Dataset: Vehicle Data[https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Vehicles/bm4k-52h4/about_data]
