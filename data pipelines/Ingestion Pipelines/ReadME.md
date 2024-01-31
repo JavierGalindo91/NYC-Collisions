@@ -66,7 +66,6 @@ The function: _**upload_dataframe_to_s3**_ is defined to upload a DataFrame to t
 1.	Converts the DataFrame to a CSV format.
 2.	Attempt to upload CSV data to the specified S3 bucket and key: _nyc-application-collisions/collisions_raw_data/_:
 3.	If the upload is successful, it prints a success message; otherwise, it prints an error message.
-
 _________________________________________________________________
 #### Script Execution and Overall Flow
 The script checks if it is being executed directly (not imported as a module), and if so, it calls the **_main_** function to initiate the entire process:
@@ -74,12 +73,11 @@ The script checks if it is being executed directly (not imported as a module), a
 2.	Define functions for retrieving data from the Socrata API and uploading data to AWS S3.
 3.	In the **_main_** function, specify API and S3 details, measure execution time, retrieve data from the Socrata API, upload data to S3, and print execution time.
 4.	Run the **_main_** function when the script is executed directly.
-   
 _________________________________________________________________
 ## METHOD #2: MULTITHREADING 
-
-#### **Importing Libraries** 
 _________________________________________________________________
+#### **Importing Libraries** 
+
 Import the necessary Python libraries and modules, including _time_, _pandas_, _boto3_ for AWS interaction, _concurrent.futures_ for parallel execution, and _Socrata_ for making requests to the API.
 
 _Just like the Brute Force Method, this script imports sensitive credentials (app_token, access_key, and secret_access_key) from an external file named secrets_1.py. It is a good practice to keep sensitive information separate from the code._
@@ -87,16 +85,17 @@ _Just like the Brute Force Method, this script imports sensitive credentials (ap
 _Please review the documentation below for more information about how to get these credentials:_
  -  https://dev.socrata.com/docs/app-tokens.html
  -  https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html
-
+_________________________________________________________________
 #### How are we fetching records from Socrata API?
 _We will define several functions to facilitate different parts of the process._ 
-_________________________________________________________________
+<br></br>
 
 _**Function 1**_: **_fetch_data_chunk_** fetches a chunk of data from a dataset based on the given offset and chunk size.
 
 **_Inputs_**: _offset, chunk size, client object_, and _dataset name_.
 - Returns a list of records retrieved from the Socrata API dataset.
-
+ <br> </br>
+ 
 _**Function 2**_: **_get_total_record_count_** retrieves the total record count of a dataset.
 
 **_Inputs_**: _client_ object, and _dataset name_.
@@ -119,7 +118,8 @@ _**Function 3**_: **_get_api_records_** fetches and aggregates records from an A
     - Load the collected data into a DataFrame.
 5.	Chunked Retrieval: The data from the API is retrieved in chunks of 5,000 records until all records are fetched and appended to the results list.
 6.	Ordering: It's worth noting that we order the API requests by the collision_id field as recommended by Socrata [documentation](https://dev.socrata.com/docs/paging.html#2.1) to ensure the stability of the result order while paging through the dataset.
-
+_________________________________________________________________
 #### How are the records uploaded to S3?
 
+_________________________________________________________________
 #### Script Execution and Overall Flow
