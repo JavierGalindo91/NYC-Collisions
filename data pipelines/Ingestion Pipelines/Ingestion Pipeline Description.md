@@ -26,7 +26,7 @@ The main data source is the NYPD Open Data API, Powered by Socrata:
 You can find the scripts for these Data Ingestion Pipelines [here](https://github.com/JavierGalindo91/NYC-Collisions/tree/main/data%20pipelines/Ingestion%20Pipelines). 
 
 ## MASS UPLOAD DATA INGESTION PIPELINE
-As stated in the previous season, a mass upload is done when setting up the application. We will then deploy this application via Docker in a different tutorial.
+As stated in the previous section, we implement a mass upload when setting up the application. We will then deploy this application via Docker in a different tutorial.
 
 We will go over two different methods to download the datasets from the sources above:
 -	**Brute Force Method**: _retrieves data from API sequentially._
@@ -34,12 +34,14 @@ We will go over two different methods to download the datasets from the sources 
 
 #### METHOD #1: BRUTE FORCE
 
-1.	Importing Libraries:
+#### **Importing Libraries** 
 Import necessary Python libraries and modules: including time, pandas, boto3 for AWS interaction, and Socrata for making requests to the Socrata API.
-Please note: This script imports sensitive credentials (app_token, access_key, and secret_access_key) from an external file named secrets_1.py. It is a good practice to keep sensitive information separate from the code. 
+
+  _**Please note**_: This script imports sensitive credentials (app_token, access_key, and secret_access_key) from an external file named secrets_1.py. It is a good practice to keep sensitive information separate from the code. 
+
 Please review the documentation below for more information about how to get these credentials:
-https://dev.socrata.com/docs/app-tokens.html
-https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html
+ -  https://dev.socrata.com/docs/app-tokens.html
+ -  https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html
 
  
 
