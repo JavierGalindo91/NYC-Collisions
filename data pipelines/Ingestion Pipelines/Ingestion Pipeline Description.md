@@ -23,4 +23,4 @@ The main data source is the NYPD Open Data API, Powered by Socrata:
 
 
 #### WHERE TO FIND THIS CODE
-You can find the scripts for these Data Ingestion Pipelines [here]([https://github.com/JavierGalindo91/NYC-Collisions/tree/main/data%20pipelines](https://github.com/JavierGalindo91/NYC-Collisions/tree/main/data%20pipelines/Ingestion%20Pipelines)https://github.com/JavierGalindo91/NYC-Collisions/tree/main/data%20pipelines/Ingestion%20Pipelines). 
+You can find the scripts for these Data Ingestion Pipelines [here](https://github.com/JavierGalindo91/NYC-Collisions/tree/main/data%20pipelines/Ingestion%20Pipelines). 
