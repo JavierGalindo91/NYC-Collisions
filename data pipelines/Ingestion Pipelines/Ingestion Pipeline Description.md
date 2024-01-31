@@ -31,3 +31,5 @@ As stated in the previous season, a mass upload is done when setting up the appl
 We will go over two different methods to download the datasets from the sources above:
 -	**Brute Force Method**: _retrieves data from API sequentially._
 -	**Multithreading Method**: _uses multithreading to retrieve data in parallel._
+
+#### METHOD #1: BRUTE FORCE
