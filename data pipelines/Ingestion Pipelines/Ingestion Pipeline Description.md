@@ -3,7 +3,7 @@
 ## OVERVIEW
 You may utilize the following guide as a reference documentation for the Data Ingestion Pipelines developed for this project.
 
-### OBJECTIVES
+#### OBJECTIVES
 The goal of this code is to achieve the following objectives:
 - _Retrieve data from the Socrata API endpoint: datasets for collisions, vehicles, and persons in New York City._
 -	_Stored the retrieved raw data in pandas DataFrames._
@@ -22,3 +22,5 @@ The main data source is the NYPD Open Data API, Powered by Socrata:
 - Vehicle Dataset: [Vehicle Data](https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Vehicles/bm4k-52h4/about_data)
 
 
+#### WHERE TO FIND THIS CODE
+You can find the scripts for these Data Ingestion Pipelines [here](https://github.com/JavierGalindo91/NYC-Collisions/tree/main/data%20pipelines). 
