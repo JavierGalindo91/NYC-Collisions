@@ -39,6 +39,7 @@ We will go over two different methods to download the datasets from the sources 
 ## METHOD #1: BRUTE FORCE
 
 #### **Importing Libraries** 
+_________________________________________________________________
 Import necessary Python libraries and modules: including _time_, _pandas_, _boto3_ for AWS interaction, and _Socrata_ for making requests to the Socrata API.
 
 _This script imports sensitive credentials (app_token, access_key, and secret_access_key) from an external file named secrets_1.py. It is a good practice to keep sensitive information separate from the code._ 
@@ -48,7 +49,8 @@ _Please review the documentation below for more information about how to get the
  -  https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html
    
 #### How are we fetching records from Socrata API?
-The function: _**get_api_records**_ is defined to retrieve records in chunks from the Socrata API and then storing them into a DataFrame. Here's how it works:
+_________________________________________________________________
+The function: _**get_api_records**_ is defined to retrieve records in chunks from the Socrata API and then storing them into a DataFrame.
 
 _**Inputs**_: Socrata client (_client_), API endpoint URL (_api_url_), application token (_app_token_), and dataset name (_dataset_name_).
 1.	Initialize some variables like _start, chunk_size_, and set a _timeout_ for the Socrata client. 
@@ -60,7 +62,8 @@ _**Inputs**_: Socrata client (_client_), API endpoint URL (_api_url_), applicati
 6.	Finally, return the fetched data as a pandas DataFrame.
  
 #### How are the records uploaded to S3?
-The function: _**upload_dataframe_to_s3**_ is defined to upload a DataFrame to the corresponding AWS S3 bucket. Here's how it works:
+_________________________________________________________________
+The function: _**upload_dataframe_to_s3**_ is defined to upload a DataFrame to the corresponding AWS S3 bucket.
 
 **_Inputs_**: AWS S3 client (_client_), S3 bucket name (_bucket_name_), object key (_key_name_), the DataFrame (_df_) to be uploaded, and the dataset name (_dataset_name_).
 1.	Converts the DataFrame to a CSV format.
@@ -68,6 +71,7 @@ The function: _**upload_dataframe_to_s3**_ is defined to upload a DataFrame to t
 3.	If the upload is successful, it prints a success message; otherwise, it prints an error message.
  
 #### Script Execution and Overall Flow
+_________________________________________________________________
 The script checks if it is being executed directly (not imported as a module), and if so, it calls the **_main_** function to initiate the entire process:
 1.	Import necessary libraries and credentials.
 2.	Define functions for retrieving data from the Socrata API and uploading data to AWS S3.
@@ -77,6 +81,7 @@ The script checks if it is being executed directly (not imported as a module), a
 ## METHOD #2: MULTITHREADING 
 
 #### **Importing Libraries** 
+_________________________________________________________________
 Import the necessary Python libraries and modules, including _time_, _pandas_, _boto3_ for AWS interaction, _concurrent.futures_ for parallel execution, and _Socrata_ for making requests to the API.
 
 _Just like the Brute Force Method, this script imports sensitive credentials (app_token, access_key, and secret_access_key) from an external file named secrets_1.py. It is a good practice to keep sensitive information separate from the code._
@@ -86,12 +91,38 @@ _Please review the documentation below for more information about how to get the
  -  https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html
 
 #### How are we fetching records from Socrata API?
-_We will define several functions to facilitate different parts of the process._
-</br>
-The function: **_fetch_data_chunk_** fetches a chunk of data from a dataset based on the given offset and chunk size. Here’s how it works:
+_________________________________________________________________
+_We will define several functions to facilitate different parts of the process._ 
+<br> </br>
+
+_**Function 1**_: **_fetch_data_chunk_** fetches a chunk of data from a dataset based on the given offset and chunk size.
 
 **_Inputs_**: _offset, chunk size, client object_, and _dataset name_.
-1.	Returns a list of records retrieved from the Socrata API dataset.
+- Returns a list of records retrieved from the Socrata API dataset.
+
+
+_**Function 2**_: **_get_total_record_count_** retrieves the total record count of a dataset.
+
+**_Inputs_**: _client_ object, and _dataset name_.
+- Returns the total number of records in a dataset within the Socrata API.
+  <br> </br>
+
+_**Function 3**_: **_get_api_records_** fetches and aggregates records from an API endpoint in parallel using a ThreadPoolExecutor. 
+
+**_Inputs_**: Socrata client (_client_), API endpoint URL (_api_url_), application token (_app_token_), and dataset name (_dataset_name_).
+1.	Initialize variable chunk_size and set a timeout for the Socrata client. 
+2.	Calculate the total number of records in the dataset by querying the API for the total record count.
+3.	Parallel Data Retrieval:     
+    - Create multiple threads to fetch data chunks in parallel, improving efficiency.
+    - Initialize counter variables start, number of requests.
+    - Create an empty list, futures, to store results of concurrent requests.
+    - Send requests to the Socrata API in a loop until the start counter reaches the total number of records in the dataset.
+    - A new thread is created for each API request, enabling parallel execution of requests. These threads are stored in the futures list.
+4.	Collect and Load Data:
+    - Wait for all threads to complete and collect their results into a list.
+    - Load the collected data into a DataFrame.
+5.	Chunked Retrieval: The data from the API is retrieved in chunks of 5,000 records until all records are fetched and appended to the results list.
+6.	Ordering: It's worth noting that we order the API requests by the collision_id field as recommended by Socrata [documentation](https://dev.socrata.com/docs/paging.html#2.1) to ensure the stability of the result order while paging through the dataset.
 
 #### How are the records uploaded to S3?
 
