@@ -37,9 +37,8 @@ We will go over two different methods to download the datasets from the sources 
 -	**Multithreading Method**: _uses multithreading to retrieve data in parallel._
 
 ## METHOD #1: BRUTE FORCE
-
-#### **Importing Libraries** 
 _________________________________________________________________
+#### **Importing Libraries** 
 Import necessary Python libraries and modules: including _time_, _pandas_, _boto3_ for AWS interaction, and _Socrata_ for making requests to the Socrata API.
 
 _This script imports sensitive credentials (app_token, access_key, and secret_access_key) from an external file named secrets_1.py. It is a good practice to keep sensitive information separate from the code._ 
@@ -47,9 +46,8 @@ _This script imports sensitive credentials (app_token, access_key, and secret_ac
 _Please review the documentation below for more information about how to get these credentials:_
  -  https://dev.socrata.com/docs/app-tokens.html
  -  https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html
-   
-#### How are we fetching records from Socrata API?
 _________________________________________________________________
+#### How are we fetching records from Socrata API?
 The function: _**get_api_records**_ is defined to retrieve records in chunks from the Socrata API and then storing them into a DataFrame.
 
 _**Inputs**_: Socrata client (_client_), API endpoint URL (_api_url_), application token (_app_token_), and dataset name (_dataset_name_).
@@ -60,24 +58,24 @@ _**Inputs**_: Socrata client (_client_), API endpoint URL (_api_url_), applicati
 5.	The data from the API is then retrieved in chunks of 5,000 records until all records are fetched and appended to the _results_ list:
 * The Socrata [documentation](https://dev.socrata.com/docs/paging.html#2.1) suggests that our request is ordered by the _collision_id_ field to guarantee that the order of our results will be stable as we page through the dataset.
 6.	Finally, return the fetched data as a pandas DataFrame.
- 
-#### How are the records uploaded to S3?
 _________________________________________________________________
+#### How are the records uploaded to S3?
 The function: _**upload_dataframe_to_s3**_ is defined to upload a DataFrame to the corresponding AWS S3 bucket.
 
 **_Inputs_**: AWS S3 client (_client_), S3 bucket name (_bucket_name_), object key (_key_name_), the DataFrame (_df_) to be uploaded, and the dataset name (_dataset_name_).
 1.	Converts the DataFrame to a CSV format.
 2.	Attempt to upload CSV data to the specified S3 bucket and key: _nyc-application-collisions/collisions_raw_data/_:
 3.	If the upload is successful, it prints a success message; otherwise, it prints an error message.
- 
-#### Script Execution and Overall Flow
+
 _________________________________________________________________
+#### Script Execution and Overall Flow
 The script checks if it is being executed directly (not imported as a module), and if so, it calls the **_main_** function to initiate the entire process:
 1.	Import necessary libraries and credentials.
 2.	Define functions for retrieving data from the Socrata API and uploading data to AWS S3.
 3.	In the **_main_** function, specify API and S3 details, measure execution time, retrieve data from the Socrata API, upload data to S3, and print execution time.
 4.	Run the **_main_** function when the script is executed directly.
- 
+   
+_________________________________________________________________
 ## METHOD #2: MULTITHREADING 
 
 #### **Importing Libraries** 
@@ -91,15 +89,13 @@ _Please review the documentation below for more information about how to get the
  -  https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html
 
 #### How are we fetching records from Socrata API?
-_________________________________________________________________
 _We will define several functions to facilitate different parts of the process._ 
-<br> </br>
+_________________________________________________________________
 
 _**Function 1**_: **_fetch_data_chunk_** fetches a chunk of data from a dataset based on the given offset and chunk size.
 
 **_Inputs_**: _offset, chunk size, client object_, and _dataset name_.
 - Returns a list of records retrieved from the Socrata API dataset.
-
 
 _**Function 2**_: **_get_total_record_count_** retrieves the total record count of a dataset.
 
