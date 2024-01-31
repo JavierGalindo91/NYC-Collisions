@@ -58,16 +58,17 @@ _**Inputs**_: Socrata client (_client_), API endpoint URL (_api_url_), applicati
  
 
 #### How are the records uploaded to S3?
-The function: upload_dataframe_to_s3 is defined to upload a DataFrame to the corresponding AWS S3 bucket. Here's how it works:
-Inputs: AWS S3 client (client), S3 bucket name (bucket_name), object key (key_name), the DataFrame (df) to be uploaded, and the dataset name (dataset_name).
+The function: _**upload_dataframe_to_s3**_ is defined to upload a DataFrame to the corresponding AWS S3 bucket. Here's how it works:
+
+**_Inputs_**: AWS S3 client (_client_), S3 bucket name (_bucket_name_), object key (_key_name_), the DataFrame (_df_) to be uploaded, and the dataset name (_dataset_name_).
 1.	Converts the DataFrame to a CSV format.
-2.	Attempt to upload CSV data to the specified S3 bucket and key: nyc-application-collisions/collisions_raw_data/:
-If the upload is successful, it prints a success message; otherwise, it prints an error message.
+2.	Attempt to upload CSV data to the specified S3 bucket and key: _nyc-application-collisions/collisions_raw_data/_:
+3.	If the upload is successful, it prints a success message; otherwise, it prints an error message.
  
 #### Script Execution and Overall Flow
-The script checks if it is being executed directly (not imported as a module), and if so, it calls the main function to initiate the entire process:
+The script checks if it is being executed directly (not imported as a module), and if so, it calls the **_main_** function to initiate the entire process:
 1.	Import necessary libraries and credentials.
 2.	Define functions for retrieving data from the Socrata API and uploading data to AWS S3.
-3.	In the main function, specify API and S3 details, measure execution time, retrieve data from the Socrata API, upload data to S3, and print execution time.
-4.	Run the main function when the script is executed directly.
+3.	In the **_main_** function, specify API and S3 details, measure execution time, retrieve data from the Socrata API, upload data to S3, and print execution time.
+4.	Run the **_main_** function when the script is executed directly.
  
