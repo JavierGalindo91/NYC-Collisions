@@ -46,8 +46,7 @@ _This script imports sensitive credentials (app_token, access_key, and secret_ac
 _Please review the documentation below for more information about how to get these credentials:_
  -  https://dev.socrata.com/docs/app-tokens.html
  -  https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html
-
- 
+   
 #### How are we fetching records from Socrata API?
 The function: _**get_api_records**_ is defined to retrieve records in chunks from the Socrata API and then storing them into a DataFrame. Here's how it works:
 
@@ -60,7 +59,6 @@ _**Inputs**_: Socrata client (_client_), API endpoint URL (_api_url_), applicati
 * The Socrata [documentation](https://dev.socrata.com/docs/paging.html#2.1) suggests that our request is ordered by the _collision_id_ field to guarantee that the order of our results will be stable as we page through the dataset.
 6.	Finally, return the fetched data as a pandas DataFrame.
  
-
 #### How are the records uploaded to S3?
 The function: _**upload_dataframe_to_s3**_ is defined to upload a DataFrame to the corresponding AWS S3 bucket. Here's how it works:
 
@@ -76,3 +74,13 @@ The script checks if it is being executed directly (not imported as a module), a
 3.	In the **_main_** function, specify API and S3 details, measure execution time, retrieve data from the Socrata API, upload data to S3, and print execution time.
 4.	Run the **_main_** function when the script is executed directly.
  
+## METHOD #2: MULTITHREADING 
+
+#### **Importing Libraries** 
+Import the necessary Python libraries and modules, including _time_, _pandas_, _boto3_ for AWS interaction, _concurrent.futures_ for parallel execution, and _Socrata_ for making requests to the API.
+
+_Just like the Brute Force Method, this script imports sensitive credentials (app_token, access_key, and secret_access_key) from an external file named secrets_1.py. It is a good practice to keep sensitive information separate from the code._
+
+_Please review the documentation below for more information about how to get these credentials:_
+ -  https://dev.socrata.com/docs/app-tokens.html
+ -  https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html
