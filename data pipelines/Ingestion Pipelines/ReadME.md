@@ -84,3 +84,15 @@ _Just like the Brute Force Method, this script imports sensitive credentials (ap
 _Please review the documentation below for more information about how to get these credentials:_
  -  https://dev.socrata.com/docs/app-tokens.html
  -  https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html
+
+#### How are we fetching records from Socrata API?
+_We will define several functions to facilitate different parts of the process._
+</br>
+The function: **_fetch_data_chunk_** fetches a chunk of data from a dataset based on the given offset and chunk size. Here’s how it works:
+
+**_Inputs_**: _offset, chunk size, client object_, and _dataset name_.
+1.	Returns a list of records retrieved from the Socrata API dataset.
+
+#### How are the records uploaded to S3?
+
+#### Script Execution and Overall Flow
