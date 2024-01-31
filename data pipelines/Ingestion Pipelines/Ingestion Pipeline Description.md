@@ -26,3 +26,8 @@ The main data source is the NYPD Open Data API, Powered by Socrata:
 You can find the scripts for these Data Ingestion Pipelines [here](https://github.com/JavierGalindo91/NYC-Collisions/tree/main/data%20pipelines/Ingestion%20Pipelines). 
 
 ## MASS UPLOAD DATA INGESTION PIPELINE
+As stated in the previous season, a mass upload is done when setting up the application. We will then deploy this application via Docker in a different tutorial.
+
+We will go over two different methods to download the datasets from the sources above:
+-	Brute Force Method: retrieves data from API sequentially.
+-	Multithreading Method: uses multithreading to retrieve data in parallel.
