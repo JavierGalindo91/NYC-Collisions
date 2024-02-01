@@ -26,6 +26,7 @@ You can find the scripts for these Data Ingestion Pipelines here:
 
 -	[bruteForce_mass_upload.py](https://github.com/JavierGalindo91/NYC-Collisions/blob/main/data%20pipelines/Ingestion%20Pipelines/bruteForce_mass_upload.py)
 - [multiThread_mass_upload.py](https://github.com/JavierGalindo91/NYC-Collisions/blob/main/data%20pipelines/Ingestion%20Pipelines/multiThread_mass_upload.py)
+<br></br>
 
 
 ## MASS UPLOAD DATA INGESTION PIPELINE
