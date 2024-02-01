@@ -2,6 +2,6 @@
 
 ## OVERVIEW
 
-- **_INGESTION PIPELINES_**: data collection scripts for initial ingestion 
-- **ETL**: tools to complete the **_Extract_**, **_Transform_** and **_Load_** process.
+- **INGESTION PIPELINES**: _data collection scripts for initial ingestion._
+- **ETL**: _tools for **_Extract_**, **_Transform_**, **_Load_** process._
 
