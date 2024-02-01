@@ -34,8 +34,8 @@ As stated in the previous section, we implement a mass upload when setting up th
 We will go over two different methods to download the datasets from the sources above:
 -	**Brute Force Method**: _retrieves data from API sequentially._
 -	**Multithreading Method**: _uses multithreading to retrieve data in parallel._
-
-## METHOD #1: BRUTE FORCE
+_________________________________________________________________
+### METHOD #1: BRUTE FORCE
 _________________________________________________________________
 #### **Importing Libraries** 
 Import necessary Python libraries and modules: including _time_, _pandas_, _boto3_ for AWS interaction, and _Socrata_ for making requests to the Socrata API.
@@ -73,7 +73,7 @@ The script checks if it is being executed directly (not imported as a module), a
 3.	In the **_main_** function, specify API and S3 details, measure execution time, retrieve data from the Socrata API, upload data to S3, and print execution time.
 4.	Run the **_main_** function when the script is executed directly.
 _________________________________________________________________
-## METHOD #2: MULTITHREADING 
+### METHOD #2: MULTITHREADING 
 _________________________________________________________________
 #### **Importing Libraries** 
 
