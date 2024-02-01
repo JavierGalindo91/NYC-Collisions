@@ -1,4 +1,4 @@
-# This repository contains documentation for all the data pipelines created for this project.
+# This repository contains documentation for all data pipelines created for this project.
 
 ## OVERVIEW
 
