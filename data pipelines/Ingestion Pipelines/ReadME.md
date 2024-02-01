@@ -140,7 +140,7 @@ Here’s how it works:
 6.	Calculates and prints the execution time.
 _________________________________________________________________
 ## PERFORMANCE COMPARISON 
-It is essential to evaluate the performance of the two methods we have explored so far. To gauge the performance of these methods, we considered the Overall Execution Time.
+To gauge the performance of these methods, we considered the overall Execution Time.
 
 This is done by measuring the total time it takes to retrieve, process, and upload the data to AWS S3. Faster processing time translates to quicker access to up-to-date data.
 
