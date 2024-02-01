@@ -104,21 +104,52 @@ _**Function 2**_: **_get_total_record_count_** retrieves the total record count 
 _**Function 3**_: **_get_api_records_** fetches and aggregates records from an API endpoint in parallel using a ThreadPoolExecutor. 
 
 **_Inputs_**: Socrata client (_client_), API endpoint URL (_api_url_), application token (_app_token_), and dataset name (_dataset_name_).
-1.	Initialize variable chunk_size and set a timeout for the Socrata client. 
-2.	Calculate the total number of records in the dataset by querying the API for the total record count.
+1.	Initialize variable _chunk_size_ and set a _timeout_ for the Socrata client. 
+2.	Calculate the _total number of records_ in the dataset by querying the API for the total record count.
 3.	Parallel Data Retrieval:     
     - Create multiple threads to fetch data chunks in parallel, improving efficiency.
-    - Initialize counter variables start, number of requests.
-    - Create an empty list, futures, to store results of concurrent requests.
-    - Send requests to the Socrata API in a loop until the start counter reaches the total number of records in the dataset.
-    - A new thread is created for each API request, enabling parallel execution of requests. These threads are stored in the futures list.
+    - Initialize counter variables _start_, _number of requests_.
+    - Create an empty _list_, _futures_, to store results of **concurrent** requests.
+    - Send requests to the Socrata API in a loop until the _start_ counter reaches the _total number of records_ in the dataset.
+    - A new thread is created for each API request, enabling parallel execution of requests. These threads are stored in the _futures_ list.
 4.	Collect and Load Data:
-    - Wait for all threads to complete and collect their results into a list.
+    - Wait for all threads to complete and collect their _results_ into a list.
     - Load the collected data into a DataFrame.
 5.	Chunked Retrieval: The data from the API is retrieved in chunks of 5,000 records until all records are fetched and appended to the results list.
 6.	Ordering: It's worth noting that we order the API requests by the collision_id field as recommended by Socrata [documentation](https://dev.socrata.com/docs/paging.html#2.1) to ensure the stability of the result order while paging through the dataset.
 _________________________________________________________________
 #### How are the records uploaded to S3?
+We will make use of the same functionality as in the Brute Force Method to upload the data to the AWS S3 bucket.
 
+The function: _**upload_dataframe_to_s3**_ is defined to upload a DataFrame to the corresponding AWS S3 bucket.
+
+**_Inputs_**: AWS S3 client (_client_), S3 bucket name (_bucket_name_), object key (_key_name_), the DataFrame (_df_) to be uploaded, and the dataset name (_dataset_name_).
+1.	Converts the DataFrame to a CSV format.
+2.	Attempt to upload CSV data to the specified S3 bucket and key: _nyc-application-collisions/collisions_raw_data/_:
+3.	If the upload is successful, it prints a success message; otherwise, it prints an error message.
 _________________________________________________________________
 #### Script Execution and Overall Flow
+The **_main_** function serves as the entry point of the script. It is being executed directly (not imported as a module).
+
+Here’s how it works:
+1.	It defines API and AWS S3 details, including the API _endpoint URL_, _application token_, dataset name, AWS S3 _bucket name_, and _object key_.
+2.	Measures the execution time of the entire process using _time.time()_.
+3.	Calls the **_get_api_records_** function to retrieve data from the Socrata API in parallel and stores it in the _crash_df_ DataFrame.
+4.	Connects to AWS S3 using the boto3 client.
+5.	Calls the **_upload_dataframe_to_s3_** function to upload the retrieved data to the specified S3 bucket.
+6.	Calculates and prints the execution time.
+_________________________________________________________________
+## PERFORMANCE COMPARISON 
+_________________________________________________________________
+It is essential to evaluate the performance of the two methods we have explored so far. To gauge the performance of these methods, we considered the Overall Execution Time.
+
+This is done by measuring the total time it takes to retrieve, process, and upload the data to AWS S3. Faster processing time translates to quicker access to up-to-date data.
+
+![image](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/b7b9c969-6f87-4524-af1d-6884d0a199e3)
+
+The Multithreading Method demonstrated significantly improved performance in terms of overall processing time, completing the task in approximately half the time compared to the Brute Force Method.
+While both methods successfully retrieved the same dataset of 2M records, the Multithreading Method proved to be more time-efficient in this scenario.
+
+![image](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/7e57dbed-a684-454d-b49b-d4a85d50dadf)
+
+
