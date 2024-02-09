@@ -154,15 +154,13 @@ While both methods successfully retrieved the same dataset of 2M records, the Mu
 ![image](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/7e57dbed-a684-454d-b49b-d4a85d50dadf)
  <br> </br>
 _________________________________________________________________
-# DAILY UPDATE DATA INGESTION PIPELINE
-We will deploy this data pipeline within the AWS cloud environment. It serves as an introduction to the Extract, Transform, Load (**_ETL_**) process for our application.
+# DAILY UPDATE DATA PIPELINE
+Compared to the Mass Upload Data Ingestion Pipelines, the Daily Update Data Pipeline is more comprehensive. It incorporates a complete Extract, Transform, Load (ETL) process to prepare the data for consumption.
 
 This data pipeline is designed to perform the following actions:
 - **_Extract_** daily records from the Socrata API.
 - **_Transform_** and organize the raw data to match the S3 folder layout.
 - **_Load_** the processed dataset to S3 bucket: _**'nyc-application-collisions/collisions_processed_data'**_.
-
-
 
 #### **Importing Libraries** 
 Import necessary Python libraries and modules: including _time_, _pandas_, _logging_, _io_, _datetime_, _boto3_ for AWS interaction, and _Socrata_ for making requests to the Socrata API.
