@@ -155,12 +155,14 @@ While both methods successfully retrieved the same dataset of 2M records, the Mu
  <br> </br>
 _________________________________________________________________
 # DAILY UPDATE DATA INGESTION PIPELINE
+We will deploy this data pipeline within the AWS cloud environment. It serves as an introduction to the Extract, Transform, Load (**_ETL_**) process for our application.
+
 This data pipeline is designed to perform the following actions:
 - **_Extract_** daily records from the Socrata API.
 - **_Transform_** and organize the raw data to match the S3 folder layout.
 - **_Load_** the processed dataset to S3 bucket: _**'nyc-application-collisions/collisions_processed_data'**_.
 
-We will implement this data pipeline via the AWS cloud environment. It is important to note that this script gives us an intro to the **_ETL_** process for our application.
+
 
 #### **Importing Libraries** 
 Import necessary Python libraries and modules: including _time_, _pandas_, _logging_, _io_, _datetime_, _boto3_ for AWS interaction, and _Socrata_ for making requests to the Socrata API.
@@ -171,17 +173,13 @@ _Please review the documentation below for more information about how to get the
  -  https://dev.socrata.com/docs/app-tokens.html
  -  https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html
 _________________________________________________________________
-#### How are we fetching records from Socrata API?
-The function: _**get_api_records**_ is defined to retrieve records in chunks from the Socrata API and then storing them into a DataFrame.
+#### Data Extraction
+The function: _**get_api_records**_ 
 
-_**Inputs**_: Socrata client (_client_), API endpoint URL (_api_url_), application token (_app_token_), and dataset name (_dataset_name_).
-1.	Initialize some variables like _start, chunk_size_, and set a _timeout_ for the Socrata client. 
-2.	Create an empty list, _results_, to store the data from the API responses. 
-3.	Calculate the _total number of records_ in the dataset and by doing a total record count.
-4.	Fire up requests to the Socrata API until the _start_ counter reaches the _total number of records_.
-5.	The data from the API is then retrieved in chunks of 5,000 records until all records are fetched and appended to the _results_ list:
-* The Socrata [documentation](https://dev.socrata.com/docs/paging.html#2.1) suggests that our request is ordered by the _collision_id_ field to guarantee that the order of our results will be stable as we page through the dataset.
-6.	Finally, return the fetched data as a pandas DataFrame.
+_**Inputs**_: 
+1.	 
+2.	 
+3.	
 _________________________________________________________________
 
 
