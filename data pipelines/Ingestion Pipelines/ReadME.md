@@ -155,7 +155,7 @@ While both methods successfully retrieved the same dataset of 2M records, the Mu
  <br> </br>
 _________________________________________________________________
 # DAILY UPDATE DATA INGESTION PIPELINE
-We will implement this data ingestion pipeline in an automated manner via the AWS cloud environment. For now we will go over the code details and we will review the automation part in a separate tutorial.
+We will implement this data ingestion pipeline via the AWS cloud environment. For now we will go over the code details and we will review the automation part in a separate tutorial.
 
 #### **Importing Libraries** 
 Import necessary Python libraries and modules: including _time_, _pandas_, _logging_, _io_, _datetime_, _boto3_ for AWS interaction, and _Socrata_ for making requests to the Socrata API.
