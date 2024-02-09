@@ -156,11 +156,11 @@ While both methods successfully retrieved the same dataset of 2M records, the Mu
 _________________________________________________________________
 # DAILY UPDATE DATA INGESTION PIPELINE
 This data pipeline is designed to perform the following actions:
-- Extract daily records from Socrata API automatically.
-- Trasnform the raw data and process it to be compatible with the S3 folder structure. 
-- Upload the processed dataset and upload it to S3 bucket _**'nyc-application-collisions/collisions_processed_data'**_
+- **_Extract_** daily records from the Socrata API.
+- **_Transform_** and organize the raw data to match the S3 folder layout.
+- **_Load_** the processed dataset to S3 bucket: _**'nyc-application-collisions/collisions_processed_data'**_.
 
-We will implement this data pipeline via the AWS cloud environment. For now we will go over the code details and we will review the AWS automation component in a separate tutorial.
+We will implement this data pipeline via the AWS cloud environment. It is important to note that this script gives us an intro to the **_ETL_** process for our application.
 
 #### **Importing Libraries** 
 Import necessary Python libraries and modules: including _time_, _pandas_, _logging_, _io_, _datetime_, _boto3_ for AWS interaction, and _Socrata_ for making requests to the Socrata API.
