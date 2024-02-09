@@ -76,7 +76,7 @@ The script checks if it is being executed directly (not imported as a module), a
 4.	Run the **_main_** function when the script is executed directly.
 _________________________________________________________________
 ### METHOD #2: MULTITHREADING 
-_________________________________________________________________
+
 #### **Importing Libraries** 
 
 Import the necessary Python libraries and modules, including _time_, _pandas_, _boto3_ for AWS interaction, _concurrent.futures_ for parallel execution, and _Socrata_ for making requests to the API.
