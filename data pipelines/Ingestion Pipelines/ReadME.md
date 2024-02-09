@@ -155,7 +155,12 @@ While both methods successfully retrieved the same dataset of 2M records, the Mu
  <br> </br>
 _________________________________________________________________
 # DAILY UPDATE DATA INGESTION PIPELINE
-We will implement this data ingestion pipeline via the AWS cloud environment. For now we will go over the code details and we will review the automation part in a separate tutorial.
+This data pipeline is designed to perform the following actiions daily:
+- Retrieve daily records from Socrata API automatically.
+- Process daily data for S3 upload
+- Upload the processed dataset and upload it to S3 bucket _**'nyc-application-collisions/collisions_processed_data'**_
+
+We will implement this data pipeline via the AWS cloud environment. For now we will go over the code details and we will review the AWS automation component in a separate tutorial.
 
 #### **Importing Libraries** 
 Import necessary Python libraries and modules: including _time_, _pandas_, _logging_, _io_, _datetime_, _boto3_ for AWS interaction, and _Socrata_ for making requests to the Socrata API.
