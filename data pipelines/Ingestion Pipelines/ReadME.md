@@ -155,9 +155,9 @@ While both methods successfully retrieved the same dataset of 2M records, the Mu
  <br> </br>
 _________________________________________________________________
 # DAILY UPDATE DATA INGESTION PIPELINE
-This data pipeline is designed to perform the following actiions daily:
-- Retrieve daily records from Socrata API automatically.
-- Process daily data for S3 upload
+This data pipeline is designed to perform the following actions:
+- Extract daily records from Socrata API automatically.
+- Trasnform the raw data and process it to be compatible with the S3 folder structure. 
 - Upload the processed dataset and upload it to S3 bucket _**'nyc-application-collisions/collisions_processed_data'**_
 
 We will implement this data pipeline via the AWS cloud environment. For now we will go over the code details and we will review the AWS automation component in a separate tutorial.
