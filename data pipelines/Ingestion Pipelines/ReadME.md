@@ -28,16 +28,17 @@ You can find the scripts for these Data Ingestion Pipelines here:
 - [multiThread_mass_upload.py](https://github.com/JavierGalindo91/NYC-Collisions/blob/main/data%20pipelines/Ingestion%20Pipelines/multiThread_mass_upload.py)
 <br></br>
 
-
-## MASS UPLOAD DATA INGESTION PIPELINE
+_________________________________________________________________
+# MASS UPLOAD DATA INGESTION PIPELINE
 As stated in the previous section, we implement a mass upload when setting up the application. We will then deploy this application via Docker in a different tutorial.
+
 
 We will go over two different methods to download the datasets from the sources above:
 -	**Brute Force Method**: _retrieves data from API sequentially._
 -	**Multithreading Method**: _uses multithreading to retrieve data in parallel._
 _________________________________________________________________
 ### METHOD #1: BRUTE FORCE
-_________________________________________________________________
+
 #### **Importing Libraries** 
 Import necessary Python libraries and modules: including _time_, _pandas_, _boto3_ for AWS interaction, and _Socrata_ for making requests to the Socrata API.
 
