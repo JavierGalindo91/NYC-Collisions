@@ -10,7 +10,7 @@ The goal of this code is to achieve the following objectives:
 
 The diagram below highlights two Data Ingestion processes, as indicated by the milestones within the yellow box:
 1. **Mass Upload**: _to be performed once when setting up the application._
-2. **Daily Updates**: _to be performed in an automated manner via the AWS cloud environment._
+2. **Daily Update**: _to be performed in an automated manner via the AWS cloud environment._
 
 ![image](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/7a770fd3-dcbe-4297-9765-f9c51ba57a15)
 
@@ -152,5 +152,9 @@ The Multithreading Method demonstrated significantly improved performance in ter
 While both methods successfully retrieved the same dataset of 2M records, the Multithreading Method proved to be more time-efficient in this scenario.
 
 ![image](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/7e57dbed-a684-454d-b49b-d4a85d50dadf)
+ <br> </br>
+_________________________________________________________________
+# DAILY UPDATE DATA INGESTION PIPELINE
+We will implement this datsa ingestion pipeline in an automated manner via the AWS cloud environment
 
 
