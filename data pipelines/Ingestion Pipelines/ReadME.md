@@ -228,3 +228,19 @@ _**Inputs**_: Dataset extracted from Socrata (_socrata_dataset_), dataset date c
    
 _**Returns**_:	Nothing. The transformation is applied directly to the input DataFrame.
 _________________________________________________________________
+#### Data Upload
+We will streamline the process of uploading structured data to S3, organizing it by date for efficient storage and retrieval.
+
+**_Function 6_**: The _**upload_dataframe_to_s3**_ function partitions the DataFrame by date and uploads each partition to S3 as a separate CSV file.
+
+_**Inputs**_: AWS clien (_aws_client_), S3 Bucket Name (_bucket_name_), Key name (_key_name_), Transformed dataset (_DataFrame_), dataset date column name (_date_column_name_)
+1. **Date Partitioning**: It partitions the DataFrame by unique dates present in the specified date column.
+2. **S3 Folder Structure Creation**: It creates a folder structure in S3 according to the year, month, and date.
+3. **CSV Conversion**: It converts the DataFrame subset corresponding to each date into a CSV file.
+4. **Upload to S3**: It uploads each CSV file to the corresponding date subfolder in S3.
+   
+_**Returns**_:	Nothing is returned.
+
+- Logging is employed to track the upload process.
+- Error handling is implemented to manage exceptions during the upload process.
+_________________________________________________________________
