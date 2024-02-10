@@ -85,7 +85,7 @@ The function: _**upload_dataframe_to_s3**_ is defined to upload a DataFrame to t
 2.	Attempt to upload CSV data to the specified S3 bucket and key: _nyc-application-collisions/collisions_raw_data/_:
 3.	If the upload is successful, it prints a success message; otherwise, it prints an error message.
 _________________________________________________________________
-#### Script Execution and Overall Flow
+#### Brute Force Script Execution
 The script checks if it is being executed directly (not imported as a module), and if so, it calls the **_main_** function to initiate the entire process:
 1.	Import necessary libraries and credentials.
 2.	Define functions for retrieving data from the Socrata API and uploading data to AWS S3.
@@ -147,7 +147,7 @@ The function: _**upload_dataframe_to_s3**_ is defined to upload a DataFrame to t
 2.	Attempt to upload CSV data to the specified S3 bucket and key: _nyc-application-collisions/collisions_raw_data/_:
 3.	If the upload is successful, it prints a success message; otherwise, it prints an error message.
 _________________________________________________________________
-#### Script Execution and Overall Flow
+#### Multithread Script Execution
 The **_main_** function serves as the entry point of the script. It is being executed directly (not imported as a module).
 
 Here’s how it works:
