@@ -4,20 +4,21 @@ You may utilize the following guide as a reference documentation for the Data In
 
 ## Table of Contents
 
-- [OBJECTIVES](https://github.com/JavierGalindo91/NYC-Collisions/blob/main/data%20pipelines/Ingestion%20Pipelines/ReadME.md#objectives)
-- [Data Ingestion Pipelines](#data-ingestion-pipelines)
-  - [Mass Upload Data Ingestion Pipeline](#mass-upload-data-ingestion-pipeline)
+- [Objectives](https://github.com/JavierGalindo91/NYC-Collisions/blob/main/data%20pipelines/Ingestion%20Pipelines/ReadME.md#objectives)
+- [Data Sources](#data-ingestion-pipelines)
+- [Where to find this code](#data-ingestion-pipelines)
+- [Mass Upload Data Ingestion Pipeline](#mass-upload-data-ingestion-pipeline)
     - [Brute Force Method](#method-1-brute-force)
     - [Multithreading Method](#method-2-multithreading)
-    - [Performance Comparison](#performance-comparison)
-  - [Daily Update Data Pipeline](#daily-update-data-pipeline)
+  - [Performance Comparison](#performance-comparison)
+- [Daily Update Data Pipeline](#daily-update-data-pipeline)
     - [Data Extraction](#data-extraction)
     - [Data Transformation](#data-transformation)
     - [Data Upload](#data-upload)
     - [Script Execution and Overall Flow](#script-execution-and-overall-flow)
-    - [Performance Overview](#performance-overview)
+  - [Performance Overview](#performance-overview)
 
-## OBJECTIVES
+## Objectives
 The goal of this code is to achieve the following objectives:
 - _Retrieve data from the Socrata API endpoint: datasets for collisions, vehicles, and persons in New York City._
 -	_Stored the retrieved raw data into pandas DataFrame._
