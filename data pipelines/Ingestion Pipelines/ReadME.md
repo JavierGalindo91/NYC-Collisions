@@ -172,12 +172,15 @@ _Please review the documentation below for more information about how to get the
  -  https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html
 _________________________________________________________________
 #### Data Extraction
-The function: _**get_api_records**_ 
+First, we will set up some tools that will help us interact with the Socrata API.
+ <br> </br>
 
-_**Inputs**_: 
-1.	 
-2.	 
-3.	
+**_Function 1_**: The _**fetch_data_worker**_ function is responsible for retrieving the total count of records from a Socrata dataset within a specified date range.
+
+_**Inputs**_: Socrata client (_socrata_client_), dataset name (_dataset_name_), start date (_starting_date_), current date (_current_date_)
+
+_**Returns**_:	An integer representing the total count of records within the specified date range. If there are no records it returns 0. 
+
 _________________________________________________________________
 
 
