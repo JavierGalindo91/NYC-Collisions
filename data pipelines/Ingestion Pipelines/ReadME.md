@@ -180,7 +180,17 @@ First, we will set up some tools that will help us interact with the Socrata API
 _**Inputs**_: Socrata client (_socrata_client_), dataset name (_dataset_name_), start date (_starting_date_), current date (_current_date_)
 
 _**Returns**_:	An integer representing the total count of records within the specified date range. If there are no records it returns 0. 
-
 _________________________________________________________________
 
+**_Function 2_**: The _**fetch_data_from_socrata**_ function fetches data from a Socrata dataset starting from a specified date.
 
+_**Inputs**_: Socrata client (_socrata_client_), dataset name (_dataset_name_), start date (_starting_date_)
+1. **Initialization**: It sets up parameters such as the chunk size for data retrieval.
+2. **Date Formatting**: Formats the start date and current date to be compatible with Socrata API calls.
+3. **Fetching Total Records**: Utilizes **_fetch_data_worker_** to determine the total count of records within the specified date range.
+4. **Data Retrieval in Chunks**: Iteratively retrieves data from the Socrata API in chunks until all records are fetched.
+5. **Data Processing**: Converts the fetched data into a DataFrame.
+6. **Output Information**: Prints out relevant information regarding the data extraction process.
+
+_**Returns**_:	A pandas DataFrame containing the fetched data.
+_________________________________________________________________
