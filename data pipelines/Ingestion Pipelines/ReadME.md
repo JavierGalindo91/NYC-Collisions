@@ -172,7 +172,7 @@ _Please review the documentation below for more information about how to get the
  -  https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html
 _________________________________________________________________
 #### Data Extraction
-First, we will set up some tools that will help us interact with the Socrata API. The process employs a straightforward approach for daily data upload, leveraging the Socrata API to retrieve records based on specified criteria with minimal resource consumption.
+_First, we will set up some tools that will help us interact with the Socrata API. The process employs a straightforward approach for daily data upload, leveraging the Socrata API to retrieve records based on specified criteria with minimal resource consumption._
  <br> </br>
 
 **_Function 1_**: The _**fetch_data_worker**_ function is responsible for retrieving the total count of records from a Socrata dataset within a specified date range.
@@ -193,4 +193,38 @@ _**Inputs**_: Socrata client (_socrata_client_), dataset name (_dataset_name_), 
 6. **Output Information**: Prints out relevant information regarding the data extraction process.
 
 _**Returns**_:	A pandas DataFrame containing the fetched data.
+_________________________________________________________________
+_Now we will set up some tools that will help us interact with the AWS S3 bucket. These functions facilitate the retrieval of temporal information from datasets stored in S3 for further analysis or management._
+
+**_Function 3_**: The _**get_latest_date_in_S3**_ function retrieves the latest date available within a specified dataset stored in an S3 bucket.
+
+_**Inputs**_: AWS client (_aws_client_), S3 Bucket name (_bucket_name_), Key name (_key_name_)
+
+_**Returns**_:	A string representing the latest date available in the dataset.
+_________________________________________________________________
+**_Function 4_**: The _**get_date_list_in_S3**_ function retrieves a list of unique dates available within a specified location inside an S3 bucket.
+
+_**Inputs**_: AWS client (_aws_client_), S3 Bucket name (_bucket_name_), Key name (_key_name_)
+1. **Initialization**: It initializes an empty list to store dates.
+2. **List Objects in S3**: It retrieves a list of objects from the specified S3 bucket and key prefix.
+3. **Extract Dates**: It parses the object keys to extract dates, assuming a specific key structure.
+4. **Date Sorting**: It sorts the extracted dates in descending order to find the latest date or unique dates.
+5. **Output**: It returns the latest date or list of unique dates.
+
+_**Returns**_:	A sorted list of unique dates available in the specified location.
+_________________________________________________________________
+#### Data Transformation
+This transformation prepares the dataset for efficient storage and analysis in S3 by standardizing temporal information and optimizing data structure.
+
+**_Function 5_**: The _**transform_data**_ function performs the following transformations on the input Socrata dataset:
+- Converts the date and time columns to pandas datetime objects.
+- Extracts year, month, day, hour, and minute from the date and time columns.
+- Drops the original time column from the dataset.
+
+_**Inputs**_: Dataset extracted from Socrata (_socrata_dataset_), dataset date column name (_date_column_name_), dataset time column name (_time_column_name_)
+1. **Date and Time Conversion**: Converts the date and time columns to pandas datetime objects.
+2. **Temporal Extraction**: Extracts year, month, day, hour, and minute from the date and time columns.
+3. **Column Dropping**: Removes the original time column from the dataset.
+   
+_**Returns**_:	Nothing. The transformation is applied directly to the input DataFrame.
 _________________________________________________________________
