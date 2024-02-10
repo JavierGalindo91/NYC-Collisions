@@ -2,7 +2,22 @@
 
 You may utilize the following guide as a reference documentation for the Data Ingestion Pipelines developed for this project.
 
-#### OBJECTIVES
+## Table of Contents
+
+- [OBJECTIVES](#OBJECTIVES)
+- [Data Ingestion Pipelines](#data-ingestion-pipelines)
+  - [Mass Upload Data Ingestion Pipeline](#mass-upload-data-ingestion-pipeline)
+    - [Brute Force Method](#method-1-brute-force)
+    - [Multithreading Method](#method-2-multithreading)
+    - [Performance Comparison](#performance-comparison)
+  - [Daily Update Data Pipeline](#daily-update-data-pipeline)
+    - [Data Extraction](#data-extraction)
+    - [Data Transformation](#data-transformation)
+    - [Data Upload](#data-upload)
+    - [Script Execution and Overall Flow](#script-execution-and-overall-flow)
+    - [Performance Overview](#performance-overview)
+
+## OBJECTIVES
 The goal of this code is to achieve the following objectives:
 - _Retrieve data from the Socrata API endpoint: datasets for collisions, vehicles, and persons in New York City._
 -	_Stored the retrieved raw data into pandas DataFrame._
