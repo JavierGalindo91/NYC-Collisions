@@ -11,7 +11,7 @@ You may utilize the following guide as a reference documentation for the Data In
     - [Brute Force Method](#method-1-brute-force)
     - [Brute Force Script Execution](#brute-Force-Script-Execution)
     - [Multithreading Method](#method-2-multithreading)
-    - [Multithreading Script Execution](#Multithreading-Script-Execution)
+    - [Multithread Script Execution](#multithread-script-execution)
   - [Performance Comparison](#performance-comparison)
 - [Daily Update Data Pipeline](#daily-update-data-pipeline)
     - [Data Extraction](#data-extraction)
