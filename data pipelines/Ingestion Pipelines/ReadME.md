@@ -260,7 +260,7 @@ _**Returns**_:	Nothing is returned.
 - Logging is employed to track the upload process.
 - Error handling is implemented to manage exceptions during the upload process.
 _________________________________________________________________
-#### Script Execution and Overall Flow
+#### Daily Updates Script Execution
 
 The **_main_** function orchestrates the data ingestion process, interacting with both the Socrata API and S3.
 
