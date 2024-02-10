@@ -42,8 +42,9 @@ The main data source is the NYPD Open Data API, Powered by Socrata:
 #### WHERE TO FIND THIS CODE
 You can find the scripts for these Data Ingestion Pipelines here:
 
--	[bruteForce_mass_upload.py](https://github.com/JavierGalindo91/NYC-Collisions/blob/main/data%20pipelines/Ingestion%20Pipelines/bruteForce_mass_upload.py)
+- [bruteForce_mass_upload.py](https://github.com/JavierGalindo91/NYC-Collisions/blob/main/data%20pipelines/Ingestion%20Pipelines/bruteForce_mass_upload.py)
 - [multiThread_mass_upload.py](https://github.com/JavierGalindo91/NYC-Collisions/blob/main/data%20pipelines/Ingestion%20Pipelines/multiThread_mass_upload.py)
+- [daily_updates.py](https://github.com/JavierGalindo91/NYC-Collisions/blob/main/data%20pipelines/Ingestion%20Pipelines/daily_updates.py)
 <br></br>
 
 _________________________________________________________________
