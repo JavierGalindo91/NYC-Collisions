@@ -258,3 +258,23 @@ Below is a breakdown of its functionality:
 
 This process ensures efficient data management and analysis by fetching, transforming, and uploading data from the Socrata API to S3 while minimizing redundant data transfer and optimizing resource usage. Additionally, it provides feedback on the readiness of the transformed data for upload and reports the total execution time for monitoring and optimization purposes.
 _________________________________________________________________
+## PERFORMANCE OVERVIEW
+The **_Daily Update Data Pipeline_** demonstrates satisfactory performance in managing data interactions between the Socrata API and S3, specifically within the date range from '_2024-01-01_' to '_2024-02-08_'.
+
+![image](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/f7108ea7-ea73-4768-9088-6db50562583d)
+
+Key performance indicators include:
+
+**Data Retrieval and Transformation**
+- The script successfully fetched 8210 records from the Socrata API, demonstrating its capability to handle substantial data volumes effectively.
+- Utilizing a "_**Brute Force Approach for Daily Upload**_", the script retrieves all available data without employing sophisticated filtering mechanisms.
+- While suitable for daily updates, this method may encounter scalability issues when dealing with notably larger datasets. In such scenarios, considering alternative approaches for data retrieval, such as employing the **_multithread_** method utilized in the _**Mass Upload Data Ingestion pipeline**_, could be beneficial.
+
+**Data Preparation and Upload**
+- The fetched data was transformed swiftly, preparing it for upload to S3.
+- Transformation activities, such as converting date and time columns and partitioning data by date, were executed seamlessly.
+- Each date's data was partitioned and saved as separate CSV files in S3, facilitating efficient data organization and management.
+
+**Execution Time**
+- The entire data ingestion process, from retrieval to transformation and upload, was completed within approximately 23.74 seconds. This indicates a reasonable processing time for the volume of data processed and the complexity of the transformation tasks performed.
+- While the execution time meets current requirements, ongoing monitoring and optimization efforts may be necessary to ensure continued performance as data volumes grow or processing requirements evolve.
