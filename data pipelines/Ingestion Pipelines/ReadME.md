@@ -244,3 +244,17 @@ _**Returns**_:	Nothing is returned.
 - Logging is employed to track the upload process.
 - Error handling is implemented to manage exceptions during the upload process.
 _________________________________________________________________
+#### Script Execution and Overall Flow
+
+The **_main_** function orchestrates the data ingestion process, interacting with both the Socrata API and S3.
+
+Below is a breakdown of its functionality:
+1. **Initialization**: It sets up the necessary parameters including the Socrata client, AWS S3 client, bucket name, and key name.
+2. **Retrieve Start Date**: It retrieves the latest date available in the S3 bucket to determine the starting point for data extraction from the Socrata API.
+3. **Data Extraction**: It fetches data from the Socrata API based on the retrieved start date.
+4. **Data Transformation**: It transforms the fetched data to prepare it for uploading to S3.
+5. **Upload to S3**: It uploads the transformed data to the specified S3 bucket, partitioned by date.
+6. **Execution Time Calculation**: It calculates the execution time of the entire process.
+
+This process ensures efficient data management and analysis by fetching, transforming, and uploading data from the Socrata API to S3 while minimizing redundant data transfer and optimizing resource usage. Additionally, it provides feedback on the readiness of the transformed data for upload and reports the total execution time for monitoring and optimization purposes.
+_________________________________________________________________
