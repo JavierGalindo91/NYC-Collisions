@@ -4,18 +4,19 @@ You may utilize the following guide as a reference documentation for the Data In
 
 ## Table of Contents
 
-- [Objectives](https://github.com/JavierGalindo91/NYC-Collisions/blob/main/data%20pipelines/Ingestion%20Pipelines/ReadME.md#objectives)
-- [Data Sources](https://github.com/JavierGalindo91/NYC-Collisions/blob/main/data%20pipelines/Ingestion%20Pipelines/ReadME.md#data-sources)
-- [Where to find this code](https://github.com/JavierGalindo91/NYC-Collisions/blob/main/data%20pipelines/Ingestion%20Pipelines/ReadME.md#where-to-find-this-code)
-- [Mass Upload Data Ingestion Pipeline](https://github.com/JavierGalindo91/NYC-Collisions/blob/main/data%20pipelines/Ingestion%20Pipelines/ReadME.md#mass-upload-data-ingestion-pipeline)
+- [Objectives](#objectives)
+- [Data Sources](#data-sources)
+- [Where to find this code](#where-to-find-this-code)
+- [Mass Upload Data Ingestion Pipeline](#mass-upload-data-ingestion-pipeline)
     - [Brute Force Method](#method-1-brute-force)
     - [Multithreading Method](#method-2-multithreading)
+    - [Script Execution and Overall Flow](#script-execution-and-overall-flow)
   - [Performance Comparison](#performance-comparison)
 - [Daily Update Data Pipeline](#daily-update-data-pipeline)
     - [Data Extraction](#data-extraction)
     - [Data Transformation](#data-transformation)
     - [Data Upload](#data-upload)
-    - [Script Execution and Overall Flow](#script-execution-and-overall-flow)
+    - [Daily Updates Script Execution](#daily-updates-script-execution)
   - [Performance Overview](#performance-overview)
 
 ## Objectives
