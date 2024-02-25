@@ -39,14 +39,12 @@ def get_total_record_count(client, dataset_name):
     total_records = int(record_count[0]['COUNT'])
     return total_records
 
-def get_api_records(client, api_url, app_token, dataset_name):
+def get_api_records(client, dataset_name):
     """
     Fetch and aggregate records from an API in parallel using a ThreadPoolExecutor.
 
     Args:
         client: The client object responsible for interacting with the API.
-        api_url (str): The URL of the API endpoint to fetch data from.
-        app_token (str): The application token required for authentication (if any).
         dataset_name (str): The name or identifier of the dataset.
 
     Returns:
@@ -121,7 +119,7 @@ def main():
     start_time = time.time()
 
     # Call on Threading Method for Mass Download
-    crash_df = get_api_records(socrata_client, data_url, app_token, crash_data_set)
+    crash_df = get_api_records(socrata_client, crash_data_set)
 
     # Connect to AWS boto3 client - Make sure to check the security settings
     aws_client = boto3.client('s3', aws_access_key_id = access_key, aws_secret_access_key = secret_access_key)
