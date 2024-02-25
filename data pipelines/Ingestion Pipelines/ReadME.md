@@ -70,7 +70,7 @@ _________________________________________________________________
 #### How are we fetching records from Socrata API?
 The function: _**get_api_records**_ is defined to retrieve records in chunks from the Socrata API and then storing them into a DataFrame.
 
-_**Inputs**_: Socrata client (_client_), API endpoint URL (_api_url_), application token (_app_token_), and dataset name (_dataset_name_).
+_**Inputs**_: Socrata client (_client_), dataset name (_dataset_name_).
 1.	Initialize some variables like _start, chunk_size_, and set a _timeout_ for the Socrata client. 
 2.	Create an empty list, _results_, to store the data from the API responses. 
 3.	Calculate the _total number of records_ in the dataset and by doing a total record count.
@@ -124,7 +124,7 @@ _**Function 2**_: **_get_total_record_count_** retrieves the total record count 
 
 _**Function 3**_: **_get_api_records_** fetches and aggregates records from an API endpoint in parallel using a ThreadPoolExecutor. 
 
-**_Inputs_**: Socrata client (_client_), API endpoint URL (_api_url_), application token (_app_token_), and dataset name (_dataset_name_).
+**_Inputs_**: Socrata client (_client_), dataset name (_dataset_name_).
 1.	Initialize variable _chunk_size_ and set a _timeout_ for the Socrata client. 
 2.	Calculate the _total number of records_ in the dataset by querying the API for the total record count.
 3.	Parallel Data Retrieval:     
