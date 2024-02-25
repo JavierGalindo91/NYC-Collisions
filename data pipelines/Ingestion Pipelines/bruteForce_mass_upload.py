@@ -5,14 +5,12 @@ from botocore.exceptions import ClientError
 from sodapy import Socrata
 from secrets_1 import app_token, access_key, secret_access_key
 
-def get_api_records(client, api_url, app_token, dataset_name):
+def get_api_records(client, dataset_name):
     """
     Fetches records from Socrata API endpoint in chunks and returns them as a DataFrame.
 
     Args:
         client (sodapy.Socrata): The Socrata client for making API requests.
-        api_url (str): The URL of the API endpoint.
-        app_token (str): The application token for accessing the API.
         dataset_name (str): The name of the dataset to retrieve.
 
     Returns:
@@ -83,7 +81,7 @@ def main():
     start_time = time.time()
 
     # Call on Brute Force Method for Mass Download
-    crash_df = get_api_records(socrata_client, data_url, app_token, crash_data_set)
+    crash_df = get_api_records(socrata_client, crash_data_set)
 
     # Connect to AWS boto3 client - Make sure to check the security settings 
     aws_client = boto3.client('s3', aws_access_key_id = access_key, aws_secret_access_key = secret_access_key)
