@@ -33,13 +33,13 @@ In this section, we outline our approach to extracting actionable insights:
 
 ### Tools Used
 - **Python 3**: Libraries (pandas, scipy, numpy, boto3, sys, io, sodapy)
-- **Docker**: Application for mass upload pipeline.
+- **Docker**: Deploy daily updates application.
 - **AWS Lambda**: Automating workflows in AWS ecosystem.
 - **AWS S3**: Repository for both raw and meticulously processed data.
 - **AWS Glue**: Data Processing tool
 - **AWS Redshift**: Build the Data Warehouse for OLAP (Online Analytical Processing).
 - **Microsoft PowerBI**: Our chosen tool for data visualization.
-- **Microsoft PowerPoint**: The canvas for our data story.
+- **Miro**: The canvas for our data story.
   
 ## Data Pipeline
 The following diagram showcases a sophisticated ecosystem, meticulously designed to transform raw data into actionable insights. This data pipeline is the backbone of our project, enabling us to process vast amounts of data efficiently and reliably. Below is an overview of the key components of our data pipeline and the tools employed in each stage:
