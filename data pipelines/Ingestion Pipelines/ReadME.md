@@ -30,8 +30,7 @@ The diagram below highlights two Data Ingestion processes, as indicated by the m
 1. **Mass Upload**: _to be performed once when setting up the application._
 2. **Daily Update**: _to be performed in an automated manner via the AWS cloud environment._
 
-![Data Pipeline](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/01af0eb7-1175-45d9-ad84-b7ff14b4efdb)
-
+![Ingestion Data Pipeline](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/75f1dd71-224c-465c-96ae-31bb2dc649b6)
 
 #### DATA SOURCES
 The main data source is the NYPD Open Data API, Powered by Socrata:
