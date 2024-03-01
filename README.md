@@ -77,7 +77,6 @@ This repository contains all the necessary files and resources used in the NYC D
 #### Directory Structure
 - **AWS**: Contains scripts and configuration files related to AWS services such as Lambda, S3, and Redshift.
 - **Docker**: Includes Dockerfile and related scripts for setting up the Docker containers used in the project.
-- **app**: Source code for the main application.
 - [**data pipelines**](https://github.com/JavierGalindo91/NYC-Collisions/tree/main/data%20pipelines): Scripts and code for setting up and managing the data pipelines.
 - **data**: This directory is typically used for storing data files. However, due to the sensitive nature of the data, it may not contain raw data files.
 - **resources**: Additional resources for the project, such as documentation, configuration files, or reference material.
