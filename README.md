@@ -8,12 +8,15 @@ I initiated the NYC Driver Behavior Analysis Project with a multifaceted motivat
 2. **End-to-End Learning**: I aspire to gain a holistic understanding of data-driven decision-making processes by immersing myself in every stage of the project lifecycle, including understanding the business context, extracting and processing data from source to delivery, and deriving actionable insights.
 3. **Technology Exploration**: As the owner of this project, I am eager to explore and master the technologies commonly used in similar endeavors, such as leveraging tools like Docker for containerization, AWS Cloud for scalable computing and storage solutions, and database technologies for efficient data management, aiming to expand my technical skill set and adapt to industry-standard practices.
 4. **Domain Expertise**: Delving into the nuances of vehicle collisions in a bustling metropolis like New York City, I seek to broaden my knowledge base and contribute meaningfully to the project's objectives, gaining a deep understanding of this complex issue.
+_________________________________________________________________
 
 ## SCENARIO: A Brief History of the NYC Driver Behavior
 
-For this project, we are undertaking an analytical initiative focused on the impact of the COVID-19 pandemic on driving behaviors in New York City. This analysis is conducted by The Car Insurance Company TCIC's data and business intelligence team, with the goal of refining the existing premium pricing methodology in response to the significant changes in urban mobility patterns.
+Join us as we delve into the impact of the COVID-19 pandemic on driving behaviors in New York City. Led by The Car Insurance Company TCIC's data and business intelligence team, our mission is clear: refine our premium pricing methodology to adapt to significant changes in urban mobility patterns.
 
-The project involves a deep dive into various datasets to understand how the pandemic has affected driving habits, risk factors, and accident trends among the NYC customer base. Our objective is to utilize these insights to inform decision-making processes within underwriting and customer service, ensuring that our products and services are effectively tailored to meet the current needs of our customers
+Our project involves a deep analysis of various datasets to understand how the pandemic has reshaped driving habits, risk factors, and accident trends among our NYC customer base. By leveraging these insights, we aim to make informed decisions within our underwriting and customer service departments, ensuring that our products and services remain relevant to our customers' evolving needs.
+
+For further details on the business context, stakeholders, and expected outcomes, please refer to the information provided in the slide below.
 
 ### Expected Outcomes
 - **Data-Driven Decision Making**: Enhancing our underwriting and customer service strategies based on thorough data analysis.
