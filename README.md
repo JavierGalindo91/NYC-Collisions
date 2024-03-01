@@ -12,7 +12,7 @@ _________________________________________________________________
 
 ## SCENARIO: A Brief History of the NYC Driver Behavior
 
-Join us as we delve into the impact of the COVID-19 pandemic on driving behaviors in New York City. Led by The Car Insurance Company TCIC's data and business intelligence team, our mission is clear: refine our premium pricing methodology to adapt to significant changes in urban mobility patterns.
+Join us as we delve into the impact of the COVID-19 pandemic on driving behaviors in New York City. Led by The Car Insurance Company TCIC's data and business intelligence team, our mission is clear: _**refine our premium pricing methodology to adapt to significant changes in urban mobility patterns.**_
 
 Our project involves a deep analysis of various datasets to understand how the pandemic has reshaped driving habits, risk factors, and accident trends among our NYC customer base. By leveraging these insights, we aim to make informed decisions within our underwriting and customer service departments, ensuring that our products and services remain relevant to our customers' evolving needs.
 
