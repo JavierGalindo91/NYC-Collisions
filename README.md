@@ -16,13 +16,9 @@ Join us as we delve into the impact of the COVID-19 pandemic on driving behavior
 
 Our project involves a deep analysis of various datasets to understand how the pandemic has reshaped driving habits, risk factors, and accident trends among our NYC customer base. By leveraging these insights, we aim to make informed decisions within our underwriting and customer service departments, ensuring that our products and services remain relevant to our customers' evolving needs.
 
-For further details on the business context, stakeholders, and expected outcomes, please refer to the information provided in the slide below.
+For further details on the business context, stakeholders, and expected outcomes, please refer to the information provided in the slide below:
 
-### Expected Outcomes
-- **Data-Driven Decision Making**: Enhancing our underwriting and customer service strategies based on thorough data analysis.
-- **Adaptability**: Adjusting our offerings to align with the shifting driving patterns and needs of our customers during and post-pandemic.
-- **Stakeholder Satisfaction**: Delivering comprehensive insights to meet and exceed stakeholder expectations.
-- **Competitive Advantage**: Using advanced analytics to maintain and strengthen our position in the insurance market.
+![Business Context](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/6c02fb1e-3ff4-4414-a10b-123e50ef2661)
 
 ## METHODOLOGY
 ### Exploratory Data Analysis
