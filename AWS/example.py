@@ -70,7 +70,7 @@ def get_date_list_in_S3(aws_client, bucket_name, key_name):
     return sorted_dates
 
 # ------------------------------------------ TOOLS TO EXTRACT DATA FROM SOCRATA API ------------------------------------------
-def fetch_data_worker(socrata_client, dataset_name, starting_date, current_date):
+def fetch_total_records_count(socrata_client, dataset_name, starting_date, current_date):
     """
     Fetches the total count of records from a Socrata dataset within a specified date range.
 
@@ -117,7 +117,7 @@ def fetch_data_from_socrata(socrata_client, dataset_name, start_date):
     current_date = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
 
     # Get the total number of records between the start and current dates
-    total_records =  fetch_data_worker(socrata_client, dataset_name, starting_date, current_date)
+    total_records =  fetch_total_records_count(socrata_client, dataset_name, starting_date, current_date)
 
     # Calling the Socrata API. Extracting data in chunks of 3,000 records
     while True:
@@ -251,8 +251,8 @@ def upload_dataframe_to_s3(aws_client, bucket_name, key_name, DataFrame, date_co
 # Initialize Socrata client
 def initialize_socrata_client():
     # Set up AWS client for SecretsManager
-    secret_name = "custom-managed-secre"
-    region_name = "us-east-1"
+    secret_name = <name_of_secret> # name of secret stored in AWS SecretsManager
+    region_name = <region> # AWS region name from user account
     session = boto3.session.Session()
     client = session.client(service_name='secretsmanager', region_name=region_name)
 
@@ -272,7 +272,7 @@ def lambda_handler(event, context):
     socrata_client = initialize_socrata_client()
 
     # Set up AWS client for S3
-    aws_client = boto3.client(service_name='s3', region_name='us-east-1')
+    aws_client = boto3.client(service_name='s3', region_name=<region>)
     
     # S3 bucket and key 
     bucket_name = 'nyc-application-collisions'
