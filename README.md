@@ -33,7 +33,7 @@ In this section, we outline our approach to extracting actionable insights:
 
 ### Tools Used
 - **Python 3**: Libraries (pandas, scipy, numpy, boto3, sys, io, sodapy)
-- **Docker**: Deploy daily updates application.
+- **Docker**: Deploy daily updates application through docker container.
 - **AWS Lambda**: Automating workflows in AWS ecosystem.
 - **AWS S3**: Repository for both raw and meticulously processed data.
 - **AWS Glue**: Data Processing tool
