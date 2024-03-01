@@ -16,22 +16,13 @@ Join us as we delve into the impact of the COVID-19 pandemic on driving behavior
 
 Our project involves a deep analysis of various datasets to understand how the pandemic has reshaped driving habits, risk factors, and accident trends among our NYC customer base. By leveraging these insights, we aim to make informed decisions within our underwriting and customer service departments, ensuring that our products and services remain relevant to our customers' evolving needs.
 
-For further details on the business context, stakeholders, and expected outcomes, please refer to the information provided in the slide below:
+The information provided below outlines the business context and expected outcomes for this project. While I'll be sharing some key points from the presentation, you can access the slideshow via the Miro board link provided: [link](https://miro.com/app/board/uXjVN9Vu39I=/?share_link_id=875736273394).
 
 ![Business Context](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/6c02fb1e-3ff4-4414-a10b-123e50ef2661)
 
 ## METHODOLOGY
-### Exploratory Data Analysis
-- **Data Discovery**: Scrutinize the data to identify key patterns and anomalies that could influence underwriting decisions.
-- **Metadata Analysis**: Gain a deep understanding of our data sources, focusing on accessibility and the structure of the data.
-
-### Deep Dive Analysis
-- **Historical Data Examination**: Conduct a thorough analysis of historical data, with a particular emphasis on factors influenced by the pandemic such as risk areas, accident trends, contributing factors, vehicle information, and person-related data.
-- **Narrative Building**: Develop a narrative through our analytical approach to make the data speak to both technical and non-technical stakeholders.
-
-## TECHNOLOGY
-- **Cloud and Data Management**: Utilize state-of-the-art cloud and data management technologies to facilitate the analysis and seamless communication of insights.
-- **Visualization and Reporting Tools**: Employ advanced visualization and reporting tools to unearth deeper findings and present them in an easily digestible format.
+In this section, we outline our approach to extracting actionable insights:
+![Methodology](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/8915c5a7-7c5c-45b1-9fca-6a95e24696fe)
 
 ## DATA SOURCES and TOOLS
 ### Data Sources
