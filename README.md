@@ -44,33 +44,32 @@ In this section, we outline our approach to extracting actionable insights:
 ## Data Pipeline
 The following diagram showcases a sophisticated ecosystem, meticulously designed to transform raw data into actionable insights. This data pipeline is the backbone of our project, enabling us to process vast amounts of data efficiently and reliably. Below is an overview of the key components of our data pipeline and the tools employed in each stage:
 
-![Data Pipeline](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/09375b87-113e-4fbf-b496-f87b3e9b411f)
+![Data Pipeline](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/696feab4-b588-4870-8e83-6366ca5e4f21)
 
 #### Data Collection and Ingestion
-_We leverage Python 3 and its powerful libraries such as Pandas, Scipy, Numpy, Boto3, Sys, IO, and Sodapy to build connectors to the NYPD Open Data API. This setup allows us to interface seamlessly with the AWS cloud environment, ensuring a smooth and efficient data ingestion process._
+_Utilizing Python 3 along with robust libraries like Pandas, Scipy, Numpy, Boto3, Sys, IO, and Sodapy, we construct connectors to the NYPD Open Data API. This configuration seamlessly integrates with the AWS cloud environment, guaranteeing a streamlined and efficient data ingestion process._
 
 #### Initial Data Processing
-_Docker comes into play here, where it is used to create an application for the mass upload pipeline. This approach ensures consistency and scalability in our data processing tasks._
+_Docker comes into play here, where it is used to deploy the code written for the daily updates application. This approach ensures consistency and scalability in the data processing tasks._
 
 #### Workflow Automation
-_AWS Lambda is our tool of choice for automating workflows within the AWS ecosystem. It enables us to manage and automate various processes in the data pipeline, enhancing efficiency and reducing the likelihood of manual errors._
+_AWS Lambda automates workflows within the AWS ecosystem, enabling us to manage and automate various processes in the data pipeline, enhancing efficiency and reducing the likelihood of manual errors._
 
 #### Data Storage
-_AWS S3 serves as our primary data repository. It hosts both the raw data collected from the API and the processed data, meticulously organized for ease of access and analysis._
+_AWS S3 serves as the primary data repository, hosting both the raw data collected from the Socrata API and the processed data meticulously organized for ease of access and analysis._
 
 #### Data Transformation
-_AWS Glue plays a crucial role in our pipeline, extracting raw data from S3 and transforming it into a format suitable for analysis. This transformation includes data cleaning, normalization, and aggregation, preparing the data for in-depth analysis._
+_AWS Glue plays a crucial role, extracting raw data from S3 and transforming it into a format suitable for analysis. This transformation includes data cleaning, normalization, and aggregation, preparing the data for in-depth analysis._
 
 #### Data Warehousing for Analysis
-_AWS Redshift is used to construct a Data Warehouse for Online Analytical Processing (OLAP). This powerful tool allows us to store and manage large volumes of processed data, making it readily available for complex queries and analysis._
+_AWS Redshift constructs a Data Warehouse for Online Analytical Processing (OLAP). This powerful tool manages large volumes of processed data, making it readily available for complex queries and analysis._
 
 #### Data Visualization and Reporting
-_Microsoft PowerBI is our chosen tool for data visualization. It enables us to unearth deep insights from our data and present them in an intuitive, visually compelling format.
-For presenting our findings and data narratives, Microsoft PowerPoint serves as our canvas, allowing us to communicate our insights clearly and effectively to stakeholders._
+_Miro is our chosen tool for data visualization. It enables us to unearth deep insights from our data and present them in an intuitive, visually compelling format._
 <br>
 </br>
 
-The integration of these tools forms a robust and dynamic data pipeline, essential for navigating the complexities of urban driving behavior analysis in the post-pandemic era. It is this pipeline that empowers us to deliver on our promise of data-driven decision-making, adaptability, stakeholder satisfaction, and competitive advantage.
+The integration of these tools forms a robust and dynamic data pipeline, essential for navigating the complexities of urban driving behavior analysis in the post-pandemic era.
 
 ## FILE and RESOURCE ACCESS
 This repository contains all the necessary files and resources used in the NYC Driver Behavior Analysis Project. Here's how to navigate and utilize them:
@@ -82,7 +81,6 @@ This repository contains all the necessary files and resources used in the NYC D
 - [**data pipelines**](https://github.com/JavierGalindo91/NYC-Collisions/tree/main/data%20pipelines): Scripts and code for setting up and managing the data pipelines.
 - **data**: This directory is typically used for storing data files. However, due to the sensitive nature of the data, it may not contain raw data files.
 - **resources**: Additional resources for the project, such as documentation, configuration files, or reference material.
-  - You can access the _**Miro Board**_: via this [link](https://miro.com/app/board/uXjVN9Vu39I=/?share_link_id=875736273394).
 
 ## HOW TO USE
 To work with the files in this repository, follow these steps:
@@ -99,7 +97,7 @@ To work with the files in this repository, follow these steps:
 If you encounter any issues or have questions about accessing specific resources, please open an issue in this repository or contact the repository administrator at javier.galindobrito@gmail.com.
 
 ## HOW TO CONTRIBUTE
-We welcome contributions from data analysts, data scientists, and urban mobility experts. If you're interested in contributing to this project, please follow these steps:
+I welcome contributions from data analysts, data scientists, and urban mobility experts. If you're interested in contributing to this project, please follow these steps:
 
 1. Fork this repository.
 1. Create a new branch for your feature (**git checkout -b feature/YourFeature**).
