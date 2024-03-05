@@ -16,7 +16,7 @@
 The AWS environment must be configured with the correct roles and access permissions.
 
 ### Create IAM Roles
-Create an IAM role with necessary permissions for Lambda to access other AWS services like ECR.
+Create an IAM role with necessary permissions for Lambda to access other AWS services like ECR and AWS Secrets Manager.
 
 1. Log into the AWS console and navigate to the IAM page.
 2. Under Access Management click on Roles.
@@ -34,7 +34,7 @@ Once the IAM role is created, we can attach permissions policies so the lambda f
 2. Select the IAM role we just created.
 3. Look for the Add Permissions button and click on the Create inline policy option.
 4. Select the appropiate access policies.
-   - You may need to create your own inline policies to manage the your application's access to AWS resources.
+   - You may need to create your own inline policies to manage your application's access to specific AWS resources.
    - AWS recommends giving the minimum access required to applications for better management.
 
 Please refer to the AWS [documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html) for more information.
@@ -69,11 +69,14 @@ I recommend using images from the [Amazon ECR Public Gallery](https://gallery.ec
 _________________________________________________________________
 ## Building Docker Image and Pushing to AWS ECR
 
-Next, we'll create a Docker image for our application and push it to AWS ECR. Make sure Docker is already running and the AWS CLI is also setup:
+Next, we'll create a Docker image for our application and push it to AWS ECR. Make sure Docker is running and the AWS CLI is installed and configured:
 
 ```
+# Create ECR Repository if it doesn't exist
+aws ecr create-repository --repository-name <repository-name>
+
 # Build docker image
-docker build -t <account_id>.dkr.<region>.amazonaws.com/<ECR_repository_name>:latest .
+docker build -t <account_id>.dkr.<region>.amazonaws.com/<ECR_repository_name>:<latest version #> .
 
 # Authenticate to registry
 aws ecr get-login-password --region <region> | docker login --username AWS --password-stdin <account_id>.dkr.ecr.<region>.amazonaws.com
