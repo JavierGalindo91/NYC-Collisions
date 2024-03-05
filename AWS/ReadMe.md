@@ -45,23 +45,41 @@ I created this Python application in a Windows environment. You can follow the s
 
 1. Create new folder on your Desktop.
 2. Save the [Dockerfile](https://github.com/JavierGalindo91/NYC-Collisions/blob/7f62e378f8c2ea3d48b8e473b2de5bb52fff573b/Docker/Dockerfile) with the appropiate configuration.
-   - I pulled the official python 3.9 lambda image from the [Amazon ECR Public Gallery](https://gallery.ecr.aws/lambda/python)
-   - If you available, I recommend to use images from the AWS Official ECR gallery. These images have been configured for smooth interaction between the application and the Lambda Execution environment.
-3. Save a [requirements.txt](https://github.com/JavierGalindo91/NYC-Collisions/blob/7f62e378f8c2ea3d48b8e473b2de5bb52fff573b/Docker/requirements.txt) file with all the dependencies for your application.
-4. Save the python script with the application code.
-   - This is where the lambda function code goes, so make sure to configure the lambda handler. See the example [here](https://github.com/JavierGalindo91/NYC-Collisions/blob/7f62e378f8c2ea3d48b8e473b2de5bb52fff573b/AWS/daily_updates_lambda.py).
-   - I adjusted the code in the [daily updates ingestion pipeline](https://github.com/JavierGalindo91/NYC-Collisions/blob/6543e9745596a489b638dc9343f48a2764d2aa3f/data%20pipelines/Ingestion%20Pipelines/daily_updates.py) so it can be executed inside the Lambda function. Here is a full description of the [functionality](https://github.com/JavierGalindo91/NYC-Collisions/blob/main/data%20pipelines/Ingestion%20Pipelines/ReadME.md#daily-update-data-pipeline). 
-_________________________________________________________________
-## Docker Image Creation
-
-Next, we'll create a Docker image for our application.
-
-### Dockerfile
-
-Ensure you have a Dockerfile in your project directory. You can use the provided Dockerfile as a template.
-
 ```Dockerfile
-# Your Dockerfile content here
 
+# Use the official python 3.9 lambda image from the Amazon ECR Public Gallery
+FROM public.ecr.aws/lambda/python:3.9
 
-![Daily Updates Pipeline](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/3722cbd6-79ac-4a31-b3d0-30320d89ecfb)
+# Copy function code
+COPY daily_updates_lambda.py ${LAMBDA_TASK_ROOT}
+
+# Install dependencies
+COPY requirements.txt /var/task/requirements.txt
+RUN pip install --no-cache-dir -r /var/task/requirements.txt
+
+# Set the CMD to your handler
+CMD ["daily_updates_lambda.lambda_handler"]
+```
+I recommend using images from the [Amazon ECR Public Gallery](https://gallery.ecr.aws/lambda/python). These images have been configured to run smoothly in the Lambda Execution environment.
+     
+4. Save a [requirements.txt](https://github.com/JavierGalindo91/NYC-Collisions/blob/7f62e378f8c2ea3d48b8e473b2de5bb52fff573b/Docker/requirements.txt) file with all the dependencies for your application.
+5. Save the python script with the application code.
+   - This is where the lambda function lives, so make sure to configure the lambda handler. See the example [here](https://github.com/JavierGalindo91/NYC-Collisions/blob/7f62e378f8c2ea3d48b8e473b2de5bb52fff573b/AWS/daily_updates_lambda.py).
+   - I adjusted the code in the [daily updates ingestion pipeline](https://github.com/JavierGalindo91/NYC-Collisions/blob/6543e9745596a489b638dc9343f48a2764d2aa3f/data%20pipelines/Ingestion%20Pipelines/daily_updates.py) so it can be executed inside the Lambda function. Here is a full description of its [functionality](https://github.com/JavierGalindo91/NYC-Collisions/blob/main/data%20pipelines/Ingestion%20Pipelines/ReadME.md#daily-update-data-pipeline). 
+_________________________________________________________________
+## Building Docker Image and Pushing to AWS ECR
+
+Next, we'll create a Docker image for our application and push it to AWS ECR. Make sure Docker is already running and the AWS CLI is also setup:
+
+```
+# Build docker image
+docker build -t <account_id>.dkr.<region>.amazonaws.com/<ECR_repository_name>:latest .
+
+# Authenticate to registry
+aws ecr get-login-password --region <region> | docker login --username AWS --password-stdin <account_id>.dkr.ecr.<region>.amazonaws.com
+
+# Tag docker image
+docker tag <account_id>.dkr.ecr.<region>.amazonaws.com/<ECR_repository_name>:latest <account_id>.dkr.ecr.<region>.amazonaws.com/<ECR_repository_name>
+
+# Push docker image
+docker push <account_id>.dkr.ecr.<region>.amazonaws.com/<ECR_repository_name>
