@@ -86,3 +86,8 @@ docker tag <account_id>.dkr.ecr.<region>.amazonaws.com/<ECR_repository_name>:lat
 
 # Push docker image
 docker push <account_id>.dkr.ecr.<region>.amazonaws.com/<ECR_repository_name>
+```
+_________________________________________________________________
+## Deploying Lambda Function from Container Image
+Now that the container image is uploaded to the AWS ECR repository, let's create a Lambda function to deploy the application.
+
