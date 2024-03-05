@@ -18,6 +18,7 @@ The AWS environment must be configured with the correct roles and access permiss
 ### Create IAM Roles
 
 Create an IAM role with necessary permissions for Lambda to access other AWS services like ECR.
+
 1. Log into the AWS console and navigate to the IAM page.
 2. Under Access Management click on Roles.
 3. Create new role:
@@ -26,6 +27,18 @@ Create an IAM role with necessary permissions for Lambda to access other AWS ser
 4. Under Add permissions, select the **_AmazonS3FullAccess_** policy and click the **_Next_** button.
 5. Enter a Role name.
 6. Click on **Create role**.
+
+### Assign Permissions to the IAM Role
+
+Once the IAM role is created, we can attach permissions policies so the lambda function can freely interact with other AWS services.
+1. Under Access Management click on Roles.
+2. Select the execute_lambdas_role we just created.
+3. Look for the Add Permissions button and click on the Create inline policy option.
+4. Select the appropiate access policies.
+   - You may need to create your own inline policies to manage the your application's access to certain resources.
+   - AWS recommends giving the minimum access required to applications for better management.
+
+Please refer to the AWS [documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html) for more information.
 
 ## Docker Image Creation
 
