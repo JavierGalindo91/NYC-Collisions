@@ -1,5 +1,7 @@
 # Setting up the Daily Updates Pipeline on AWS Lambda with Python and Docker
 
+![Daily Updates Pipeline](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/3722cbd6-79ac-4a31-b3d0-30320d89ecfb)
+
 ## Goals
 - Create a Docker image for the Daily Updates application.
 - Upload the Docker image to AWS ECR.
@@ -44,8 +46,11 @@ I created this Python application in a Windows environment. You can follow the s
 1. Create new folder on your Desktop.
 2. Save the [Dockerfile](https://github.com/JavierGalindo91/NYC-Collisions/blob/7f62e378f8c2ea3d48b8e473b2de5bb52fff573b/Docker/Dockerfile) with the appropiate configuration.
    - I pulled the official python 3.9 lambda image from the [Amazon ECR Public Gallery](https://gallery.ecr.aws/lambda/python)
-   - Follow the instructions for proper setup and deployment.
-   - It is very important to look for images in the [AWS Official ECR gallery](https://gallery.ecr.aws/). These images have been configured for smooth interaction between the application and the Lambda Execution environment.
+   - If you available, I recommend to use images from the AWS Official ECR gallery. These images have been configured for smooth interaction between the application and the Lambda Execution environment.
+3. Save a [requirements.txt](https://github.com/JavierGalindo91/NYC-Collisions/blob/7f62e378f8c2ea3d48b8e473b2de5bb52fff573b/Docker/requirements.txt) file with all the dependencies for your application.
+4. Save the python script with the application code.
+   - This is where the lambda function code goes, so make sure to configure the lambda handler. See the example [here](https://github.com/JavierGalindo91/NYC-Collisions/blob/7f62e378f8c2ea3d48b8e473b2de5bb52fff573b/AWS/daily_updates_lambda.py).
+   - I adjusted the code in the [daily updates ingestion pipeline](https://github.com/JavierGalindo91/NYC-Collisions/blob/6543e9745596a489b638dc9343f48a2764d2aa3f/data%20pipelines/Ingestion%20Pipelines/daily_updates.py) so it can be executed inside the Lambda function. Here is a full description of the [functionality](https://github.com/JavierGalindo91/NYC-Collisions/blob/main/data%20pipelines/Ingestion%20Pipelines/ReadME.md#daily-update-data-pipeline). 
 _________________________________________________________________
 ## Docker Image Creation
 
