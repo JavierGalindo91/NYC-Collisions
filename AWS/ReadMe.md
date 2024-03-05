@@ -41,8 +41,8 @@ _________________________________________________________________
 ## Creating Docker Application
 I created this Python application in a Windows environment. You can follow the steps below;
 
-1. Create new folder on your Desktop
-2. Save the Dockerfile with the appropiate configuration to create the Lambda Python image.
+1. Create new folder on your Desktop.
+2. Save the [Dockerfile](Docker/Dockerfile) with the appropiate configuration to create the Lambda Python image.
    - I pulled the official python 3.9 lambda image from the [Amazon ECR Public Gallery](https://gallery.ecr.aws/lambda/python)
    - Follow the instructions for proper setup and deployment.
    - It is very important to look for images in the [AWS Official ECR gallery](https://gallery.ecr.aws/). These images have been configured for smooth interaction between the application and the Lambda Execution environment.
