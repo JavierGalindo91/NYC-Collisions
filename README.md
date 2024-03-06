@@ -75,11 +75,11 @@ The integration of these tools forms a robust and dynamic data pipeline, essenti
 This repository contains all the necessary files and resources used in the NYC Driver Behavior Analysis Project. Here's how to navigate and utilize them:
 
 #### Directory Structure
-- **AWS**: Contains scripts and configuration files related to AWS services such as Lambda, S3, and Redshift.
-- **Docker**: Includes Dockerfile and related scripts for setting up the Docker containers used in the project.
+- [**AWS**](https://github.com/JavierGalindo91/NYC-Collisions/tree/c6562fe3ff2427a6620679110ca9de2a622db52d/AWS): Contains scripts and configuration files related to AWS services such as Lambda, S3, and Redshift.
+- [**Docker**](https://github.com/JavierGalindo91/NYC-Collisions/tree/c6562fe3ff2427a6620679110ca9de2a622db52d/Docker): Includes Dockerfile and related scripts for setting up the Docker containers used in the project.
 - [**data pipelines**](https://github.com/JavierGalindo91/NYC-Collisions/tree/main/data%20pipelines): Scripts and code for setting up and managing the data pipelines.
-- **data**: This directory is typically used for storing data files. However, due to the sensitive nature of the data, it may not contain raw data files.
-- **resources**: Additional resources for the project, such as documentation, configuration files, or reference material.
+- [**data**](https://github.com/JavierGalindo91/NYC-Collisions/tree/c6562fe3ff2427a6620679110ca9de2a622db52d/data): This directory is typically used for storing data files. However, due to the sensitive nature of the data, it may not contain raw data files.
+- [**resources**](https://github.com/JavierGalindo91/NYC-Collisions/tree/c6562fe3ff2427a6620679110ca9de2a622db52d/resources): Additional resources for the project, such as documentation, configuration files, or reference material.
 
 ## HOW TO USE
 To work with the files in this repository, follow these steps:
