@@ -2,8 +2,6 @@
 
 ![Daily Updates Pipeline](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/3722cbd6-79ac-4a31-b3d0-30320d89ecfb)
 
-**add diagram to other pipelines!**
-
 ## Goals
 - Create a Docker image for the Daily Updates application.
 - Upload the Docker image to AWS ECR.
@@ -18,7 +16,7 @@
 The AWS environment must be configured with the correct roles and access permissions.
 
 ### Create IAM Roles
-Create an IAM role with necessary permissions for Lambda to access other AWS services like ECR and AWS Secrets Manager.
+Create an IAM role with necessary permissions for Lambda to access other AWS services like AWS ECR, AWS CloudWatch, and AWS Secrets Manager.
 
 1. Log into the AWS console and navigate to the IAM page.
 2. Under Access Management click on Roles.
@@ -106,4 +104,16 @@ Now that the container image is uploaded to the AWS ECR repository, let's create
 9. Click on **Create function**
 
 _________________________________________________________________
-## Deploying Lambda Function from Container Image
+## Testing Lambda Function
+
+1. Log into the AWS console and navigate to the Lambda page.
+2. Select on the **Functions** option.
+3. Click on the lambda function just created.
+4. Create a **Test event** and click on the **Test** button.
+5. If you encounter an error you can check the AWS CloudWatch logs for more details:
+     - It is very important to check the logs as it will show you how the code runs in the Lambda execution environment.
+     - Often times the issues you will encounter will be due to incorrect confuigurations and bugs in the code. 
+     - Here is a tutorial on how to use this [service](https://www.youtube.com/watch?v=CCx3EVAMDgM).
+6. If successful our response will return a json string containing the **_statusCode: 200_**, and the contents of the data uploaded:
+   
+![image](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/d18ecc5a-bbae-42f2-b52d-93c9d38edcf5)
