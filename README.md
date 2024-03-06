@@ -4,15 +4,20 @@
 I initiated the NYC Driver Behavior Analysis Project with a multifaceted motivation that extends beyond the immediate scenario. While the project addresses the impact of the COVID-19 pandemic on driving behaviors in New York City, it also serves as a platform for personal and professional growth.
 
 ### Personal Motivations
-1. **Skill Enhancement**: I aim to polish my data skills and build a comprehensive data portfolio through hands-on experience with real-world datasets.
-2. **End-to-End Learning**: I aspire to gain a holistic understanding of data-driven decision-making processes by immersing myself in every stage of the project lifecycle, including understanding the business context, extracting and processing data from source to delivery, and deriving actionable insights.
-3. **Technology Exploration**: As the owner of this project, I am eager to explore and master the technologies commonly used in similar endeavors, such as leveraging tools like Docker for containerization, AWS Cloud for scalable computing and storage solutions, and database technologies for efficient data management, aiming to expand my technical skill set and adapt to industry-standard practices.
-4. **Domain Expertise**: Delving into the nuances of vehicle collisions in a bustling metropolis like New York City, I seek to broaden my knowledge base and contribute meaningfully to the project's objectives, gaining a deep understanding of this complex issue.
+**Skill Enhancement**: I aim to polish my data skills and build a comprehensive data portfolio through hands-on experience with real-world datasets.
+
+**End-to-End Learning**: I aspire to gain a holistic understanding of data-driven decision-making processes by immersing myself in every stage of the project lifecycle, including understanding the business context, extracting and processing data from source to delivery, and deriving actionable insights.
+
+**Technology Exploration**: As the owner of this project, I am eager to explore and master the technologies commonly used in similar endeavors, such as leveraging tools like Docker for containerization, AWS Cloud for scalable computing and storage solutions, and database technologies for efficient data management, aiming to expand my technical skill set and adapt to industry-standard practices.
+
+**Domain Expertise**: Delving into the nuances of vehicle collisions in a bustling metropolis like New York City, I seek to broaden my knowledge base and contribute meaningfully to the project's objectives, gaining a deep understanding of this complex issue.
 _________________________________________________________________
 
 ## SCENARIO: A Brief History of the NYC Driver Behavior
 
-Join us as we delve into the impact of the COVID-19 pandemic on driving behaviors in New York City. Led by The Car Insurance Company TCIC's data and business intelligence team, our mission is clear: _**refine our premium pricing methodology to adapt to significant changes in urban mobility patterns.**_
+Join us as we delve into the impact of the COVID-19 pandemic on driving behaviors in New York City. Led by The Car Insurance Company TCIC's data and business intelligence team, our mission is clear: 
+
+_**Refine our premium pricing methodology to adapt to significant changes in urban mobility patterns.**_
 
 Our project involves a deep analysis of various datasets to understand how the pandemic has reshaped driving habits, risk factors, and accident trends among our NYC customer base. By leveraging these insights, we aim to make informed decisions within our underwriting and customer service departments, ensuring that our products and services remain relevant to our customers' evolving needs.
 
