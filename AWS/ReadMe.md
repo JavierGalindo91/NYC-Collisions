@@ -93,3 +93,17 @@ _________________________________________________________________
 ## Deploying Lambda Function from Container Image
 Now that the container image is uploaded to the AWS ECR repository, let's create a Lambda function to deploy the application.
 
+1. Log into the AWS console and navigate to the Lambda page.
+2. Select on the **Functions** option.
+3. Click the **Create Function** button.
+4. Select **Container image** to deploy a container image for your function.
+5. Enter the function name.
+6. Under Container image URI browse to the ECR repository.
+    - If the repository is not available, navigate to AWS ECR and copy the URI address.
+7. Select the latest image and Architecture.
+8. Under Permissions select **Use an existing role**.
+   - Choose the corresponding IAM user.
+9. Click on **Create function**
+
+_________________________________________________________________
+## Deploying Lambda Function from Container Image
