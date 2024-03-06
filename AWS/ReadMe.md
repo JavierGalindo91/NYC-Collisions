@@ -84,7 +84,7 @@ docker build -t <account_id>.dkr.<region>.amazonaws.com/<ECR_repository_name>:<l
 aws ecr get-login-password --region <region> | docker login --username AWS --password-stdin <account_id>.dkr.ecr.<region>.amazonaws.com
 
 # Tag docker image
-docker tag <account_id>.dkr.ecr.<region>.amazonaws.com/<ECR_repository_name>:latest <account_id>.dkr.ecr.<region>.amazonaws.com/<ECR_repository_name>
+docker tag <account_id>.dkr.ecr.<region>.amazonaws.com/<ECR_repository_name>:<latest version #> <account_id>.dkr.ecr.<region>.amazonaws.com/<ECR_repository_name>
 
 # Push docker image
 docker push <account_id>.dkr.ecr.<region>.amazonaws.com/<ECR_repository_name>
