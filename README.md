@@ -48,33 +48,47 @@ In this section, we outline our approach to extracting actionable insights:
 - **Miro**: The canvas for our data story.
   
 ## Data Pipeline
-The following diagram showcases a sophisticated ecosystem, meticulously designed to transform raw data into actionable insights. This data pipeline is the backbone of our project, enabling us to process vast amounts of data efficiently and reliably. Below is an overview of the key components of our data pipeline and the tools employed in each stage:
+The following diagram showcases a sophisticated ecosystem, meticulously designed to transform raw data into actionable insights. This data pipeline is the backbone of this project, enabling us to process vast amounts of data efficiently and reliably. Below is an overview of the key components of the data pipeline and the tools employed in each stage:
 
 ![Data Pipeline](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/696feab4-b588-4870-8e83-6366ca5e4f21)
 
-#### Data Collection and Ingestion
-_Utilizing Python 3 along with robust libraries like Pandas, Scipy, Numpy, Boto3, Sys, IO, and Sodapy, we construct connectors to the NYPD Open Data API. This configuration seamlessly integrates with the AWS cloud environment, guaranteeing a streamlined and efficient data ingestion process._
+## Data Ingestion
 
-#### Initial Data Processing
-_Docker comes into play here, where it is used to deploy the code written for the daily updates application. This approach ensures consistency and scalability in the data processing tasks._
+_**Mass Upload:**_
+_To kickstart our data pipeline, I've employed a Python application tailored to directly fetch data from the Socrata API. Once retrieved, this data is securely stored within an S3 bucket dedicated to **raw collisions data**._
 
-#### Workflow Automation
-_AWS Lambda automates workflows within the AWS ecosystem, enabling us to manage and automate various processes in the data pipeline, enhancing efficiency and reducing the likelihood of manual errors._
+_I devised two distinct methods for this upload process: **sequential retrieval** and **parallel retrieval**. Each method has its own set of advantages and drawbacks, extensively discussed within this [tutorial](https://github.com/JavierGalindo91/NYC-Collisions/tree/3552e3bd04fe960cf930641bf296ffe26f109fe8/data%20pipelines/Ingestion%20Pipelines)._
 
-#### Data Storage
+_This initial data influx is executed locally, serving as a crucial step to establish the foundational storage infrastructure, priming the pipeline for subsequent processing stages._
+_________________________________________________________________
+
+_**Daily Updates:**_
+_A pivotal aspect of this pipeline involves ensuring that our data remains up-to-date with daily advancements. To achieve this, I designed a streamlined pipeline orchestrated to execute daily updates seamlessly._
+
+_Leveraging tools such as Docker containers, AWS ECR (Elastic Container Registry), AWS CloudWatch, AWS Secrets Manager, and AWS Lambda, to automate the ETL (Extract, Transform, Load) process._
+
+_This automated pipeline handles the retrieval and processing of data according to a pre-defined daily schedule, ensuring our dataset remains current and actionable. Please access this [link](https://github.com/JavierGalindo91/NYC-Collisions/tree/3552e3bd04fe960cf930641bf296ffe26f109fe8/AWS) for more details._
+
+## Workflow Automation
+
+_AWS Lambda serves as the backbone for automating workflows within the AWS ecosystem, empowering us to efficiently manage and automate various processes within our data pipeline. By leveraging Lambda, we significantly enhance efficiency while concurrently minimizing the risk of manual errors. This streamlined approach to workflow automation ensures smooth operation throughout the entirety of our data pipeline, facilitating seamless data processing and analysis._
+
+## Data Storage
+
 _AWS S3 serves as the primary data repository, hosting both the raw data collected from the Socrata API and the processed data meticulously organized for ease of access and analysis._
 
-#### Data Transformation
+## Data Transformation
+
 _AWS Glue plays a crucial role, extracting raw data from S3 and transforming it into a format suitable for analysis. This transformation includes data cleaning, normalization, and aggregation, preparing the data for in-depth analysis._
 
-#### Data Warehousing for Analysis
+## Data Warehousing for Analysis
+
 _AWS Redshift constructs a Data Warehouse for Online Analytical Processing (OLAP). This powerful tool manages large volumes of processed data, making it readily available for complex queries and analysis._
 
-#### Data Visualization and Reporting
-_Miro is our chosen tool for data visualization. It enables us to unearth deep insights from our data and present them in an intuitive, visually compelling format._
-<br>
-</br>
+## Data Visualization and Reporting
 
+_Miro is our chosen tool for data visualization. It enables us to unearth deep insights from our data and present them in an intuitive, visually compelling format._
+_________________________________________________________________
 The integration of these tools forms a robust and dynamic data pipeline, essential for navigating the complexities of urban driving behavior analysis in the post-pandemic era.
 
 ## FILE and RESOURCE ACCESS
