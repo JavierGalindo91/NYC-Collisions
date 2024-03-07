@@ -117,3 +117,6 @@ _________________________________________________________________
 6. If successful our response will return a json string containing the **_statusCode: 200_**, and the contents of the data uploaded:
    
 ![image](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/d18ecc5a-bbae-42f2-b52d-93c9d38edcf5)
+_________________________________________________________________
+![image](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/b4df83fd-7f0b-4f4a-8120-a091656bf121)
+
