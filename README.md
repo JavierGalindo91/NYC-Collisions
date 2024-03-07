@@ -17,7 +17,7 @@ _________________________________________________________________
 
 Join us as we delve into the impact of the COVID-19 pandemic on driving behaviors in New York City. Led by The Car Insurance Company TCIC's data and business intelligence team, our mission is clear: 
 
-_**Refine our premium pricing methodology to adapt to significant changes in urban mobility patterns.**_
+_**Refine the premium pricing methodology to adapt to significant changes in urban mobility patterns.**_
 
 Our project involves a deep analysis of various datasets to understand how the pandemic has reshaped driving habits, risk factors, and accident trends among our NYC customer base. By leveraging these insights, we aim to make informed decisions within our underwriting and customer service departments, ensuring that our products and services remain relevant to our customers' evolving needs.
 
@@ -27,6 +27,7 @@ The information provided below outlines the business context and expected outcom
 
 ## METHODOLOGY
 In this section, we outline our approach to extracting actionable insights:
+
 ![Methodology](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/8915c5a7-7c5c-45b1-9fca-6a95e24696fe)
 
 ## DATA SOURCES and TOOLS
