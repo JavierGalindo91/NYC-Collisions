@@ -58,6 +58,8 @@ We will go over two different methods to download the datasets from the sources 
 _________________________________________________________________
 ### METHOD #1: BRUTE FORCE
 
+![image](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/d54045f5-14d5-48af-ab59-1e4cd25dd7e2)
+
 #### **Importing Libraries** 
 Import necessary Python libraries and modules: including _time_, _pandas_, _boto3_ for AWS interaction, and _Socrata_ for making requests to the Socrata API.
 
@@ -95,6 +97,8 @@ The script checks if it is being executed directly (not imported as a module), a
 4.	Run the **_main_** function when the script is executed directly.
 _________________________________________________________________
 ### METHOD #2: MULTITHREADING 
+
+![image](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/cda1f9a9-dbc8-4eee-b9a2-c7665a25ba54)
 
 #### **Importing Libraries** 
 
