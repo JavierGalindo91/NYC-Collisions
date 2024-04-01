@@ -62,8 +62,8 @@ CMD ["daily_updates_lambda.lambda_handler"]
 ```
 I recommend using images from the [Amazon ECR Public Gallery](https://gallery.ecr.aws/lambda/python). These images have been configured to run smoothly in the Lambda Execution environment.
      
-4. Save a [requirements.txt](https://github.com/JavierGalindo91/NYC-Collisions/blob/7f62e378f8c2ea3d48b8e473b2de5bb52fff573b/Docker/requirements.txt) file with all the dependencies for your application.
-5. Save the python script with the application code.
+3. Save a [requirements.txt](https://github.com/JavierGalindo91/NYC-Collisions/blob/7f62e378f8c2ea3d48b8e473b2de5bb52fff573b/Docker/requirements.txt) file with all the dependencies for your application.
+4. Save the python script with the application code.
    - This is where the lambda function lives, so make sure to configure the lambda handler. See the example [here](https://github.com/JavierGalindo91/NYC-Collisions/blob/7f62e378f8c2ea3d48b8e473b2de5bb52fff573b/AWS/daily_updates_lambda.py).
    - I adjusted the code in the [daily updates ingestion pipeline](https://github.com/JavierGalindo91/NYC-Collisions/blob/6543e9745596a489b638dc9343f48a2764d2aa3f/data%20pipelines/Ingestion%20Pipelines/daily_updates.py) so it can be executed inside the Lambda function. Here is a full description of its [functionality](https://github.com/JavierGalindo91/NYC-Collisions/blob/main/data%20pipelines/Ingestion%20Pipelines/ReadME.md#daily-update-data-pipeline). 
 _________________________________________________________________
