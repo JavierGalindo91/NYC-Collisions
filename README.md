@@ -39,10 +39,10 @@ In this section, we outline our approach to extracting actionable insights:
 
 ### Tools Used
 - **Python 3**: Libraries (pandas, scipy, numpy, boto3, sys, io, sodapy)
-- **Docker**: Deploy daily updates application through docker container.
+- **Docker**: Deploy data pipelines using docker containers.
 - **AWS Lambda**: Automating workflows in AWS ecosystem.
 - **AWS S3**: Repository for both raw and meticulously processed data.
-- **AWS Glue**: Data Processing tool
+- **AWS BATCH**: Data Processing tool
 - **AWS Redshift**: Build the Data Warehouse for OLAP (Online Analytical Processing).
 - **Microsoft PowerBI**: Our chosen tool for data visualization.
 - **Miro**: The canvas for our data story.
@@ -79,7 +79,7 @@ _AWS S3 serves as the primary data repository, hosting both the raw data collect
 
 ## Data Transformation
 
-_AWS Glue plays a crucial role, extracting raw data from S3 and transforming it into a format suitable for analysis. This transformation includes data cleaning, normalization, and aggregation, preparing the data for in-depth analysis._
+_AWS BATCH plays a crucial role, extracting raw data from S3 and transforming it into a format suitable for analysis. This transformation includes data cleaning, normalization, and aggregation, preparing the data for in-depth analysis._
 
 ## Data Warehousing for Analysis
 
