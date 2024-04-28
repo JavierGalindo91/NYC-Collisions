@@ -50,7 +50,7 @@ In this section, we outline our approach to extracting actionable insights:
 ## Data Pipeline
 The following diagram showcases a sophisticated ecosystem, meticulously designed to transform raw data into actionable insights. This data pipeline is the backbone of this project, enabling us to process vast amounts of data efficiently and reliably. Below is an overview of the key components of the data pipeline and the tools employed in each stage:
 
-![Data Pipeline](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/696feab4-b588-4870-8e83-6366ca5e4f21)
+![image](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/ca3b7c07-7308-43bd-b2bb-cf5ac54be760)
 
 ## Data Ingestion
 
