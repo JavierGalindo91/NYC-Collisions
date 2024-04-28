@@ -42,7 +42,7 @@ In this section, we outline our approach to extracting actionable insights:
 - **Docker**: Deploy data pipelines using docker containers.
 - **AWS Lambda**: Automating workflows in AWS ecosystem.
 - **AWS S3**: Repository for both raw and meticulously processed data.
-- **AWS BATCH**: Data Processing tool
+- **AWS Batch**: Data Processing tool
 - **AWS Redshift**: Build the Data Warehouse for OLAP (Online Analytical Processing).
 - **Microsoft PowerBI**: Our chosen tool for data visualization.
 - **Miro**: The canvas for our data story.
@@ -79,7 +79,7 @@ _AWS S3 serves as the primary data repository, hosting both the raw data collect
 
 ## Data Transformation
 
-_AWS BATCH plays a crucial role, extracting raw data from S3 and transforming it into a format suitable for analysis. This transformation includes data cleaning, normalization, and aggregation, preparing the data for in-depth analysis._
+_AWS Batch plays a crucial role, extracting raw data from S3 and transforming it into a format suitable for analysis. This transformation includes data cleaning, normalization, and aggregation, preparing the data for in-depth analysis._
 
 ## Data Warehousing for Analysis
 
