@@ -30,7 +30,7 @@ The diagram below highlights two Data Ingestion processes, as indicated by the m
 1. **Mass Upload**: _to be performed once when setting up the application._
 2. **Daily Update**: _to be performed in an automated manner via the AWS cloud environment._
 
-![Ingestion Data Pipeline](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/75f1dd71-224c-465c-96ae-31bb2dc649b6)
+![image](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/449e486a-a5f2-4955-9342-ef346159d302)
 
 #### DATA SOURCES
 The main data source is the NYPD Open Data API, Powered by Socrata:
@@ -58,7 +58,8 @@ We will go over two different methods to download the datasets from the sources 
 _________________________________________________________________
 ### METHOD #1: BRUTE FORCE
 
-![image](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/d54045f5-14d5-48af-ab59-1e4cd25dd7e2)
+![image](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/fa5bcf76-1f8e-40eb-b2a8-c8eb936c4c37)
+
 
 #### **Importing Libraries** 
 Import necessary Python libraries and modules: including _time_, _pandas_, _boto3_ for AWS interaction, and _Socrata_ for making requests to the Socrata API.
@@ -98,7 +99,7 @@ The script checks if it is being executed directly (not imported as a module), a
 _________________________________________________________________
 ### METHOD #2: MULTITHREADING 
 
-![image](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/cda1f9a9-dbc8-4eee-b9a2-c7665a25ba54)
+![image](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/b4accadb-6e21-4878-90b2-e0c1cea417fd)
 
 #### **Importing Libraries** 
 
