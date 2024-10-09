@@ -58,7 +58,7 @@ We will go over two different methods to download the datasets from the sources 
 _________________________________________________________________
 ### METHOD #1: BRUTE FORCE
 
-![image](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/fa5bcf76-1f8e-40eb-b2a8-c8eb936c4c37)
+![image](https://github.com/user-attachments/assets/a76a8af1-fae5-4bc5-b3d1-cb20b281551f)
 
 
 #### **Importing Libraries** 
