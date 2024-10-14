@@ -99,7 +99,7 @@ The script checks if it is being executed directly (not imported as a module), a
 _________________________________________________________________
 ### METHOD #2: MULTITHREADING 
 
-![image](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/b4accadb-6e21-4878-90b2-e0c1cea417fd)
+![image](https://github.com/user-attachments/assets/d518539f-0199-4517-bd33-9a4ef40ff395)
 
 #### **Importing Libraries** 
 
