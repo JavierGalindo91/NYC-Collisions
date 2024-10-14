@@ -60,8 +60,9 @@ _________________________________________________________________
 
 ![image](https://github.com/user-attachments/assets/a76a8af1-fae5-4bc5-b3d1-cb20b281551f)
 
+Link to code [here](https://github.com/JavierGalindo91/NYC-Collisions/blob/main/data%20pipelines/Ingestion%20Pipelines/bruteForce_mass_upload.py).
 
-#### **Importing Libraries** 
+### **Importing Libraries** 
 Import necessary Python libraries and modules: including _time_, _pandas_, _boto3_ for AWS interaction, and _Socrata_ for making requests to the Socrata API.
 
 _This script imports sensitive credentials (app_token, access_key, and secret_access_key) from an external file named secrets_1.py. It is a good practice to keep sensitive information separate from the code._ 
@@ -70,7 +71,7 @@ _Please review the documentation below for more information about how to get the
  -  https://dev.socrata.com/docs/app-tokens.html
  -  https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html
 _________________________________________________________________
-#### How are we fetching records from Socrata API?
+### How are we fetching records from Socrata API?
 The function: _**get_api_records**_ is defined to retrieve records in chunks from the Socrata API and then storing them into a DataFrame.
 
 _**Inputs**_: Socrata client (_client_), dataset name (_dataset_name_).
@@ -82,7 +83,7 @@ _**Inputs**_: Socrata client (_client_), dataset name (_dataset_name_).
 * The Socrata [documentation](https://dev.socrata.com/docs/paging.html#2.1) suggests that our request is ordered by the _collision_id_ field to guarantee that the order of our results will be stable as we page through the dataset.
 6.	Finally, return the fetched data as a pandas DataFrame.
 _________________________________________________________________
-#### How are the records uploaded to S3?
+### How are the records uploaded to S3?
 The function: _**upload_dataframe_to_s3**_ is defined to upload a DataFrame to the corresponding AWS S3 bucket.
 
 **_Inputs_**: AWS S3 client (_client_), S3 bucket name (_bucket_name_), object key (_key_name_), the DataFrame (_df_) to be uploaded, and the dataset name (_dataset_name_).
@@ -90,18 +91,19 @@ The function: _**upload_dataframe_to_s3**_ is defined to upload a DataFrame to t
 2.	Attempt to upload CSV data to the specified S3 bucket and key: _nyc-application-collisions/collisions_raw_data/_:
 3.	If the upload is successful, it prints a success message; otherwise, it prints an error message.
 _________________________________________________________________
-#### Brute Force Script Execution
+### Brute Force Script Execution
 The script checks if it is being executed directly (not imported as a module), and if so, it calls the **_main_** function to initiate the entire process:
 1.	Import necessary libraries and credentials.
 2.	Define functions for retrieving data from the Socrata API and uploading data to AWS S3.
 3.	In the **_main_** function, specify API and S3 details, measure execution time, retrieve data from the Socrata API, upload data to S3, and print execution time.
 4.	Run the **_main_** function when the script is executed directly.
 _________________________________________________________________
-### METHOD #2: MULTITHREADING 
+### METHOD #2: MULTITHREADING
 
 ![image](https://github.com/user-attachments/assets/d518539f-0199-4517-bd33-9a4ef40ff395)
 
-#### **Importing Libraries** 
+Link to code [here](https://github.com/JavierGalindo91/NYC-Collisions/blob/main/data%20pipelines/Ingestion%20Pipelines/multiThread_mass_upload.py).
+### **Importing Libraries** 
 
 Import the necessary Python libraries and modules, including _time_, _pandas_, _boto3_ for AWS interaction, _concurrent.futures_ for parallel execution, and _Socrata_ for making requests to the API.
 
@@ -111,7 +113,7 @@ _Please review the documentation below for more information about how to get the
  -  https://dev.socrata.com/docs/app-tokens.html
  -  https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html
 _________________________________________________________________
-#### How are we fetching records from Socrata API?
+### How are we fetching records from Socrata API?
 _We will define several functions to facilitate different parts of the process._ 
 <br></br>
 
@@ -144,7 +146,7 @@ _**Function 3**_: **_get_api_records_** fetches and aggregates records from an A
 5.	Chunked Retrieval: The data from the API is retrieved in chunks of 5,000 records until all records are fetched and appended to the results list.
 6.	Ordering: It's worth noting that we order the API requests by the collision_id field as recommended by Socrata [documentation](https://dev.socrata.com/docs/paging.html#2.1) to ensure the stability of the result order while paging through the dataset.
 _________________________________________________________________
-#### How are the records uploaded to S3?
+### How are the records uploaded to S3?
 We will make use of the same functionality as in the Brute Force Method to upload the data to the AWS S3 bucket.
 
 The function: _**upload_dataframe_to_s3**_ is defined to upload a DataFrame to the corresponding AWS S3 bucket.
@@ -154,7 +156,7 @@ The function: _**upload_dataframe_to_s3**_ is defined to upload a DataFrame to t
 2.	Attempt to upload CSV data to the specified S3 bucket and key: _nyc-application-collisions/collisions_raw_data/_:
 3.	If the upload is successful, it prints a success message; otherwise, it prints an error message.
 _________________________________________________________________
-#### Multithread Script Execution
+### Multithread Script Execution
 The **_main_** function serves as the entry point of the script. It is being executed directly (not imported as a module).
 
 Here’s how it works:
@@ -178,15 +180,18 @@ While both methods successfully retrieved the same dataset of 2M records, the Mu
 ![image](https://github.com/JavierGalindo91/NYC-Collisions/assets/17058746/7e57dbed-a684-454d-b49b-d4a85d50dadf)
  <br> </br>
 _________________________________________________________________
-# DAILY UPDATE DATA PIPELINE
-Compared to the Mass Upload Data Ingestion Pipelines, the Daily Update Data Pipeline is more comprehensive. It incorporates a complete Extract, Transform, Load (ETL) process to prepare the data for consumption.
+# DAILY UPDATES DATA PIPELINE
+Compared to the **Mass Upload Data Ingestion Pipelines**, the **Daily Update Data Pipeline** is more comprehensive. It incorporates a complete **Extract**, **Transform**, **Load (ETL)** process to prepare the data for consumption.
+
+![image](https://github.com/user-attachments/assets/59c05297-ff58-4c8a-8b82-2e0c67abe0df)
 
 This data pipeline is designed to perform the following actions:
 - **_Extract_** daily records from the Socrata API.
 - **_Transform_** and organize the raw data to match the S3 folder layout.
 - **_Load_** the processed dataset to S3 bucket: _**'nyc-application-collisions/collisions_processed_data'**_.
 
-#### **Importing Libraries** 
+Link to code [here](https://github.com/JavierGalindo91/NYC-Collisions/blob/main/data%20pipelines/Ingestion%20Pipelines/daily_updates.py)
+### **Importing Libraries** 
 Import necessary Python libraries and modules: including _time_, _pandas_, _logging_, _io_, _datetime_, _boto3_ for AWS interaction, and _Socrata_ for making requests to the Socrata API.
 
 _This script imports sensitive credentials (app_token, access_key, and secret_access_key) from an external file named secrets_1.py. It is a good practice to keep sensitive information separate from the code._ 
@@ -195,7 +200,7 @@ _Please review the documentation below for more information about how to get the
  -  https://dev.socrata.com/docs/app-tokens.html
  -  https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html
 _________________________________________________________________
-#### Data Extraction
+### Data Extraction
 _First, we will set up some tools that will help us interact with the Socrata API. The process employs a straightforward approach for daily data upload, leveraging the Socrata API to retrieve records based on specified criteria with minimal resource consumption._
  <br> </br>
 
@@ -237,7 +242,7 @@ _**Inputs**_: AWS client (_aws_client_), S3 Bucket name (_bucket_name_), Key nam
 
 _**Returns**_:	A sorted list of unique dates available in the specified location.
 _________________________________________________________________
-#### Data Transformation
+### Data Transformation
 This transformation prepares the dataset for efficient storage and analysis in S3 by standardizing temporal information and optimizing data structure.
 
 **_Function 5_**: The _**transform_data**_ function performs the following transformations on the input Socrata dataset:
@@ -252,7 +257,7 @@ _**Inputs**_: Dataset extracted from Socrata (_socrata_dataset_), dataset date c
    
 _**Returns**_:	Nothing. The transformation is applied directly to the input DataFrame.
 _________________________________________________________________
-#### Data Upload
+### Data Upload
 We will streamline the process of uploading structured data to S3, organizing it by date for efficient storage and retrieval.
 
 **_Function 6_**: The _**upload_dataframe_to_s3**_ function partitions the DataFrame by date and uploads each partition to S3 as a separate CSV file.
